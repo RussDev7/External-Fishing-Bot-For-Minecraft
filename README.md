@@ -1,5 +1,5 @@
 <h2 align="center">
-  **// The 100% Undetectable Auto Fisher For Minecraft \\**
+  // The 100% Undetectable Auto Fisher For Minecraft \\
 </h2>
 <p align="center" style="font-size:50px;">
  || Never slave fishing again! ||
@@ -97,12 +97,11 @@ Changes since version V. 2.4.0.0
 
 <b>Requirements:</b>
 <p>
-- In your music & sounds... settings, you will want to turn all sounds off except Master Volume & Friendly Creatures.  
+- In your <u>music & sounds...</u> settings, you will want to turn all sounds off except <u>Master Volume</u> & <u>Friendly Creatures</u>.<br> 
 - Bellow are a few key-binds you need to change in your games settings. (If you wish to use these settings)
 
--   Auto Eject Rod - Must Bind  Drop Selected Item  as  middle-mouse-button  (Push down scroll wheel)
--   Anti-AFK - Must Bind  Sneak  as  left-mouse-button  (Left click button)
+-   Auto Eject Rod -> Must Bind <u>Drop Selected Item</u> as <u>middle-mouse-button</u> (Push down scroll wheel)
+-   Anti-AFK -> Must Bind <u>Sneak</u> as <u>left-mouse-button</u> (Left click button)
 </p>
-<a href="https://www.virustotal.com/gui/file/eaa4ce4c49fae8cb6d7b8ac505f5af96b81907e775c682fc5a57f6b8cbf706c0/detection">https://www.virustotal.com/gui/file/...06c0/detection</a>
-<p></p>
+<a href="https://www.virustotal.com/gui/file/eaa4ce4c49fae8cb6d7b8ac505f5af96b81907e775c682fc5a57f6b8cbf706c0/detection">https://www.virustotal.com/gui/file/...06c0/detection</a><br> 
 <a href="https://virusscan.jotti.org/en-US/filescanjob/wjj2phgkuj">https://virusscan.jotti.org/en-US/fi...job/wjj2phgkuj</a>
