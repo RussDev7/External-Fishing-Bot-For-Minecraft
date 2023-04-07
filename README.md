@@ -1,8 +1,11 @@
 <h2 align="center">
   // The 100% Undetectable Auto Fisher For Minecraft \\
 </h2>
-<p align="center" style="font-size:50px;">
+<p align="center" style="font-size:180px;">
  || Never slave fishing again! ||
+</p>
+<p align="center" style="font-size:80px;">
+ Minecraft 1.4.2-1.19.4+
 </p>
 
 <p align="center">
