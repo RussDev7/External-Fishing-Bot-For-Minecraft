@@ -38,7 +38,7 @@ Changes since version V. 1.1.8.0
 Changes since version V. 1.2.0.0                                                                                                   
  - Tweaked custom wait values
  - Added close bot
- - Added & fixed tooltip typo's :)
+ - Added & fixed tooltip typos :)
 
 Changes since version V. 2.1.2.0                                                                                                   
  - Cleaned UI
@@ -70,7 +70,7 @@ Changes since version V. 2.4.0.0
 Changes since version V. 2.4.1.0
  - Added java name dropdown option for legacy game versions
  - Java no longer requires a hardcoded path
- - Updated to support new launcher.
+ - Updated to support new launcher
 ```
 </details>
 
