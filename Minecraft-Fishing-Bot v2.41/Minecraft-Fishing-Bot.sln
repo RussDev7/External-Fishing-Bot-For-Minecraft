@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minecraft-Fishing-Bot", "WindowsFormsApp2\Minecraft-Fishing-Bot.csproj", "{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Debug|x64.ActiveCfg = Debug|x64
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Debug|x64.Build.0 = Debug|x64
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Release|x64.ActiveCfg = Release|x64
+		{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {730991A3-D273-4863-BF57-FAABADF0FAEC}
+	EndGlobalSection
+EndGlobal
