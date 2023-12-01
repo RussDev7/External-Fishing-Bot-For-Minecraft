@@ -2,7 +2,7 @@
   // The 100% Undetectable Auto Fisher For Minecraft \\
 </h1>
 <h2 align="center" style="font-size:180px;">
- || Minecraft 1.4.2-1.19.4+ ||
+ || Minecraft 1.4.2-1.20.2+ ||
 </h2>
 
 <p align="center">
@@ -66,6 +66,11 @@ Changes since version V. 2.4.0.0
  - Added swing offset feature
  - Bug fixes and code cleanup
  - Finilized release
+
+Changes since version V. 2.4.1.0
+ - Added java name dropdown option for legacy game versions
+ - Java no longer requires a hardcoded path
+ - Updated to support new launcher.
 ```
 </details>
 
