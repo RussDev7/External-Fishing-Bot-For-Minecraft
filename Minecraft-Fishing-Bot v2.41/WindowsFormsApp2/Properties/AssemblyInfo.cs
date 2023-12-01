@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Minecraft Auto-Fishing Bot v2.40")]
+[assembly: AssemblyTitle("Minecraft Auto-Fishing Bot v2.41")]
 [assembly: AssemblyDescription("For Farming Those Fish; Day In, Day Out.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("RuSS Tools Inc.")]
