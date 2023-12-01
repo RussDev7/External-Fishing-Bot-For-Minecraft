@@ -7,7 +7,7 @@
     <ProjectGuid>{44D97329-4C53-4E55-84AB-5D5EDB9E5F91}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MinecraftFishingBot</RootNamespace>
-    <AssemblyName>Minecraft Auto-Fishing Bot v2.40</AssemblyName>
+    <AssemblyName>Minecraft Auto-Fishing Bot v2.41</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
