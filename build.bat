@@ -1,8 +1,8 @@
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: Install MCExternalFishingBot Via MSBuild                                             ::
-:: Gihub https://github.com/RussDev7/Undetected-External-Auto-Fishing-Bot-For-Minecraft ::
-:: Developed and maintained by RussDev7 / Discord: dannyruss                            ::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Build MCExternalFishingBot Via MSBuild                                                 ::
+:: GitHub: https://github.com/RussDev7/Undetected-External-Auto-Fishing-Bot-For-Minecraft ::
+:: Developed and maintained by RussDev7 / Discord: dannyruss                              ::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @ECHO OFF
 SETLOCAL ENABLEDELAYEDEXPANSION
 
