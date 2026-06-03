@@ -78,6 +78,11 @@ Changes since version V. 2.4.2.0
  - Bedrock mode now targets the Minecraft.Windows process
  - Organized legacy code with summaries, regions, and notes for easier maintenance
  - Improve release build batch script
+ 
+Changes since version V. 2.4.3.0
+ - Improved bot responsiveness by replacing blocking waits with async delays
+ - Cleaned up control naming and legacy WinForms warning messages
+ - Improved maintainability with additional code cleanup
 ```
 </details>
 
@@ -117,10 +122,3 @@ Changes since version V. 2.4.2.0
 </p>
 <a href="https://www.virustotal.com/gui/file/eaa4ce4c49fae8cb6d7b8ac505f5af96b81907e775c682fc5a57f6b8cbf706c0/detection">https://www.virustotal.com/gui/file/...06c0/detection</a><br> 
 <a href="https://virusscan.jotti.org/en-US/filescanjob/wjj2phgkuj">https://virusscan.jotti.org/en-US/fi...job/wjj2phgkuj</a>
-
-### TODO
-
-- Rename old WinForms control names to match their current purpose.
-  - Example: Replace Java-specific control names with game-version or Minecraft-version names where appropriate.
-- Clean up outdated Designer-generated names after the UI flow is stable.
-- Keep behavior changes separate from control-name-only refactors when possible so future diffs are easier to review

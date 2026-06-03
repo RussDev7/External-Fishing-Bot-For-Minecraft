@@ -30,880 +30,854 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.GroupBox5 = new System.Windows.Forms.GroupBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.GroupBox4 = new System.Windows.Forms.GroupBox();
-            this.NumericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.Label15 = new System.Windows.Forms.Label();
-            this.NumericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.Label12 = new System.Windows.Forms.Label();
-            this.NumericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.Label11 = new System.Windows.Forms.Label();
-            this.NumericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.Label10 = new System.Windows.Forms.Label();
-            this.Button4 = new System.Windows.Forms.Button();
-            this.Button5 = new System.Windows.Forms.Button();
-            this.GroupBox3 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.NumericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.Label17 = new System.Windows.Forms.Label();
-            this.Label16 = new System.Windows.Forms.Label();
-            this.Label14 = new System.Windows.Forms.Label();
-            this.Label13 = new System.Windows.Forms.Label();
-            this.Label9 = new System.Windows.Forms.Label();
-            this.MyX_MyY = new System.Windows.Forms.TextBox();
-            this.Label8 = new System.Windows.Forms.Label();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.StatusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.ToolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ToolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.bedrockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.javaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Timer2 = new System.Windows.Forms.Timer(this.components);
-            this.Timer3 = new System.Windows.Forms.Timer(this.components);
-            this.Timer4 = new System.Windows.Forms.Timer(this.components);
-            this.Timer5 = new System.Windows.Forms.Timer(this.components);
-            this.Timer6 = new System.Windows.Forms.Timer(this.components);
-            this.Timer7 = new System.Windows.Forms.Timer(this.components);
-            this.Tmr = new System.Windows.Forms.Timer(this.components);
-            this.button2 = new System.Windows.Forms.Button();
-            this.timer8 = new System.Windows.Forms.Timer(this.components);
-            this.timer9 = new System.Windows.Forms.Timer(this.components);
-            this.timer10 = new System.Windows.Forms.Timer(this.components);
-            this.GroupBox5.SuspendLayout();
-            this.GroupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).BeginInit();
-            this.GroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
-            this.GroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            this.GroupBox1.SuspendLayout();
-            this.StatusStrip1.SuspendLayout();
+            this.ServerOptions_GroupBox = new System.Windows.Forms.GroupBox();
+            this.AntiAFKProtection_CheckBox = new System.Windows.Forms.CheckBox();
+            this.CustomWaitValues_GroupBox = new System.Windows.Forms.GroupBox();
+            this.NoiseDelayValue_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.NoiseDelay_Label = new System.Windows.Forms.Label();
+            this.LineOutDelayValue_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.LineOutDelay_Label = new System.Windows.Forms.Label();
+            this.LineInDelayValue_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.LineInDelay_Label = new System.Windows.Forms.Label();
+            this.StartBotDelay_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.StartBotDelay_Label = new System.Windows.Forms.Label();
+            this.PressToStopBot_Button = new System.Windows.Forms.Button();
+            this.PressToStartBot_Button = new System.Windows.Forms.Button();
+            this.FishingOptions_GroupBox = new System.Windows.Forms.GroupBox();
+            this.SwingOffsetValue_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.SwingOffset_CheckBox = new System.Windows.Forms.CheckBox();
+            this.UnlimitedThrows_CheckBox = new System.Windows.Forms.CheckBox();
+            this.CloseBotWhenFinished_CheckBox = new System.Windows.Forms.CheckBox();
+            this.CustomThrowsValue_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.LeaveWhenFinished_CheckBox = new System.Windows.Forms.CheckBox();
+            this.AutoEjectRod_CheckBox = new System.Windows.Forms.CheckBox();
+            this.Save1HP_CheckBox = new System.Windows.Forms.CheckBox();
+            this.UseHotbarScrolling_CheckBox = new System.Windows.Forms.CheckBox();
+            this.CustomThrows_CheckBox = new System.Windows.Forms.CheckBox();
+            this.SoundVUSensitivity_GroupBox = new System.Windows.Forms.GroupBox();
+            this.TriggerBotAt_Label = new System.Windows.Forms.Label();
+            this.TriggerBotAtValue_NumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.BotStatus_GroupBox = new System.Windows.Forms.GroupBox();
+            this.Debug_CheckBox1 = new System.Windows.Forms.CheckBox();
+            this.Debug_CheckBox3 = new System.Windows.Forms.CheckBox();
+            this.Debug_CheckBox2 = new System.Windows.Forms.CheckBox();
+            this.CurrentScrollRodValue_Label = new System.Windows.Forms.Label();
+            this.CurrentScrollRod_Label = new System.Windows.Forms.Label();
+            this.CurrentRodCastsValue_Label = new System.Windows.Forms.Label();
+            this.CurrentRodCasts_Label = new System.Windows.Forms.Label();
+            this.ProcessVersionValue_Label = new System.Windows.Forms.Label();
+            this.XY_TextBox = new System.Windows.Forms.TextBox();
+            this.ProcessVersion_Label = new System.Windows.Forms.Label();
+            this.Resources_Label = new System.Windows.Forms.Label();
+            this.TotalLinesPulledValue_Label = new System.Windows.Forms.Label();
+            this.GameProcessesValue_Label = new System.Windows.Forms.Label();
+            this.TotalLinesPulled_Label = new System.Windows.Forms.Label();
+            this.GameProcesses_Label = new System.Windows.Forms.Label();
+            this.Bot_StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.GameStatus_ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.GameStatusValue_ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Seperator_ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.VULevel_ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.VULevelValue_ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Capture_ToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Version_ToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.Java_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Bedrock_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AudioDetectionTimer = new System.Windows.Forms.Timer(this.components);
+            this.StatusRefreshTimer = new System.Windows.Forms.Timer(this.components);
+            this.AntiAfkTimer = new System.Windows.Forms.Timer(this.components);
+            this.RodTimeoutTimer = new System.Windows.Forms.Timer(this.components);
+            this.LoadingPleaseWait_Button = new System.Windows.Forms.Button();
+            this.VuCaptureTimeoutTimer = new System.Windows.Forms.Timer(this.components);
+            this.VuLevelCaptureTimer = new System.Windows.Forms.Timer(this.components);
+            this.ServerOptions_GroupBox.SuspendLayout();
+            this.CustomWaitValues_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NoiseDelayValue_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LineOutDelayValue_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LineInDelayValue_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartBotDelay_NumericUpDown)).BeginInit();
+            this.FishingOptions_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SwingOffsetValue_NumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomThrowsValue_NumericUpDown)).BeginInit();
+            this.SoundVUSensitivity_GroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TriggerBotAtValue_NumericUpDown)).BeginInit();
+            this.BotStatus_GroupBox.SuspendLayout();
+            this.Bot_StatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // GroupBox5
+            // ServerOptions_GroupBox
             // 
-            this.GroupBox5.Controls.Add(this.checkBox10);
-            this.GroupBox5.Enabled = false;
-            this.GroupBox5.Location = new System.Drawing.Point(178, 292);
-            this.GroupBox5.Name = "GroupBox5";
-            this.GroupBox5.Size = new System.Drawing.Size(154, 48);
-            this.GroupBox5.TabIndex = 36;
-            this.GroupBox5.TabStop = false;
-            this.GroupBox5.Text = "Server Options";
+            this.ServerOptions_GroupBox.Controls.Add(this.AntiAFKProtection_CheckBox);
+            this.ServerOptions_GroupBox.Enabled = false;
+            this.ServerOptions_GroupBox.Location = new System.Drawing.Point(178, 292);
+            this.ServerOptions_GroupBox.Name = "ServerOptions_GroupBox";
+            this.ServerOptions_GroupBox.Size = new System.Drawing.Size(154, 48);
+            this.ServerOptions_GroupBox.TabIndex = 36;
+            this.ServerOptions_GroupBox.TabStop = false;
+            this.ServerOptions_GroupBox.Text = "Server Options";
             // 
-            // checkBox10
+            // AntiAFKProtection_CheckBox
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(6, 19);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(118, 17);
-            this.checkBox10.TabIndex = 11;
-            this.checkBox10.Text = "Anti-AFK Protection";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.AntiAFKProtection_CheckBox.AutoSize = true;
+            this.AntiAFKProtection_CheckBox.Location = new System.Drawing.Point(6, 19);
+            this.AntiAFKProtection_CheckBox.Name = "AntiAFKProtection_CheckBox";
+            this.AntiAFKProtection_CheckBox.Size = new System.Drawing.Size(118, 17);
+            this.AntiAFKProtection_CheckBox.TabIndex = 11;
+            this.AntiAFKProtection_CheckBox.Text = "Anti-AFK Protection";
+            this.AntiAFKProtection_CheckBox.UseVisualStyleBackColor = true;
             // 
-            // GroupBox4
+            // CustomWaitValues_GroupBox
             // 
-            this.GroupBox4.Controls.Add(this.NumericUpDown5);
-            this.GroupBox4.Controls.Add(this.Label15);
-            this.GroupBox4.Controls.Add(this.NumericUpDown4);
-            this.GroupBox4.Controls.Add(this.Label12);
-            this.GroupBox4.Controls.Add(this.NumericUpDown3);
-            this.GroupBox4.Controls.Add(this.Label11);
-            this.GroupBox4.Controls.Add(this.NumericUpDown2);
-            this.GroupBox4.Controls.Add(this.Label10);
-            this.GroupBox4.Enabled = false;
-            this.GroupBox4.Location = new System.Drawing.Point(12, 346);
-            this.GroupBox4.Name = "GroupBox4";
-            this.GroupBox4.Size = new System.Drawing.Size(320, 128);
-            this.GroupBox4.TabIndex = 35;
-            this.GroupBox4.TabStop = false;
-            this.GroupBox4.Text = "Custom Wait Values (Mili-Seconds) --- [1000 = 1 Second]";
+            this.CustomWaitValues_GroupBox.Controls.Add(this.NoiseDelayValue_NumericUpDown);
+            this.CustomWaitValues_GroupBox.Controls.Add(this.NoiseDelay_Label);
+            this.CustomWaitValues_GroupBox.Controls.Add(this.LineOutDelayValue_NumericUpDown);
+            this.CustomWaitValues_GroupBox.Controls.Add(this.LineOutDelay_Label);
+            this.CustomWaitValues_GroupBox.Controls.Add(this.LineInDelayValue_NumericUpDown);
+            this.CustomWaitValues_GroupBox.Controls.Add(this.LineInDelay_Label);
+            this.CustomWaitValues_GroupBox.Controls.Add(this.StartBotDelay_NumericUpDown);
+            this.CustomWaitValues_GroupBox.Controls.Add(this.StartBotDelay_Label);
+            this.CustomWaitValues_GroupBox.Enabled = false;
+            this.CustomWaitValues_GroupBox.Location = new System.Drawing.Point(12, 346);
+            this.CustomWaitValues_GroupBox.Name = "CustomWaitValues_GroupBox";
+            this.CustomWaitValues_GroupBox.Size = new System.Drawing.Size(320, 128);
+            this.CustomWaitValues_GroupBox.TabIndex = 35;
+            this.CustomWaitValues_GroupBox.TabStop = false;
+            this.CustomWaitValues_GroupBox.Text = "Custom Wait Values (Mili-Seconds) --- [1000 = 1 Second]";
             // 
-            // NumericUpDown5
+            // NoiseDelayValue_NumericUpDown
             // 
-            this.NumericUpDown5.Increment = new decimal(new int[] {
+            this.NoiseDelayValue_NumericUpDown.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.NumericUpDown5.Location = new System.Drawing.Point(93, 100);
-            this.NumericUpDown5.Maximum = new decimal(new int[] {
+            this.NoiseDelayValue_NumericUpDown.Location = new System.Drawing.Point(93, 100);
+            this.NoiseDelayValue_NumericUpDown.Maximum = new decimal(new int[] {
             60000,
             0,
             0,
             0});
-            this.NumericUpDown5.Name = "NumericUpDown5";
-            this.NumericUpDown5.Size = new System.Drawing.Size(219, 20);
-            this.NumericUpDown5.TabIndex = 15;
-            this.NumericUpDown5.Value = new decimal(new int[] {
+            this.NoiseDelayValue_NumericUpDown.Name = "NoiseDelayValue_NumericUpDown";
+            this.NoiseDelayValue_NumericUpDown.Size = new System.Drawing.Size(219, 20);
+            this.NoiseDelayValue_NumericUpDown.TabIndex = 15;
+            this.NoiseDelayValue_NumericUpDown.Value = new decimal(new int[] {
             4000,
             0,
             0,
             0});
             // 
-            // Label15
+            // NoiseDelay_Label
             // 
-            this.Label15.AutoSize = true;
-            this.Label15.Location = new System.Drawing.Point(6, 102);
-            this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(67, 13);
-            this.Label15.TabIndex = 6;
-            this.Label15.Text = "Noise-Delay:";
+            this.NoiseDelay_Label.AutoSize = true;
+            this.NoiseDelay_Label.Location = new System.Drawing.Point(6, 102);
+            this.NoiseDelay_Label.Name = "NoiseDelay_Label";
+            this.NoiseDelay_Label.Size = new System.Drawing.Size(67, 13);
+            this.NoiseDelay_Label.TabIndex = 6;
+            this.NoiseDelay_Label.Text = "Noise-Delay:";
             // 
-            // NumericUpDown4
+            // LineOutDelayValue_NumericUpDown
             // 
-            this.NumericUpDown4.Increment = new decimal(new int[] {
+            this.LineOutDelayValue_NumericUpDown.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.NumericUpDown4.Location = new System.Drawing.Point(93, 74);
-            this.NumericUpDown4.Maximum = new decimal(new int[] {
+            this.LineOutDelayValue_NumericUpDown.Location = new System.Drawing.Point(93, 74);
+            this.LineOutDelayValue_NumericUpDown.Maximum = new decimal(new int[] {
             60000,
             0,
             0,
             0});
-            this.NumericUpDown4.Name = "NumericUpDown4";
-            this.NumericUpDown4.Size = new System.Drawing.Size(219, 20);
-            this.NumericUpDown4.TabIndex = 14;
-            this.NumericUpDown4.Value = new decimal(new int[] {
+            this.LineOutDelayValue_NumericUpDown.Name = "LineOutDelayValue_NumericUpDown";
+            this.LineOutDelayValue_NumericUpDown.Size = new System.Drawing.Size(219, 20);
+            this.LineOutDelayValue_NumericUpDown.TabIndex = 14;
+            this.LineOutDelayValue_NumericUpDown.Value = new decimal(new int[] {
             2000,
             0,
             0,
             0});
             // 
-            // Label12
+            // LineOutDelay_Label
             // 
-            this.Label12.AutoSize = true;
-            this.Label12.Location = new System.Drawing.Point(6, 76);
-            this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(80, 13);
-            this.Label12.TabIndex = 4;
-            this.Label12.Text = "Line-Out-Delay:";
+            this.LineOutDelay_Label.AutoSize = true;
+            this.LineOutDelay_Label.Location = new System.Drawing.Point(6, 76);
+            this.LineOutDelay_Label.Name = "LineOutDelay_Label";
+            this.LineOutDelay_Label.Size = new System.Drawing.Size(80, 13);
+            this.LineOutDelay_Label.TabIndex = 4;
+            this.LineOutDelay_Label.Text = "Line-Out-Delay:";
             // 
-            // NumericUpDown3
+            // LineInDelayValue_NumericUpDown
             // 
-            this.NumericUpDown3.Increment = new decimal(new int[] {
+            this.LineInDelayValue_NumericUpDown.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.NumericUpDown3.Location = new System.Drawing.Point(93, 48);
-            this.NumericUpDown3.Maximum = new decimal(new int[] {
+            this.LineInDelayValue_NumericUpDown.Location = new System.Drawing.Point(93, 48);
+            this.LineInDelayValue_NumericUpDown.Maximum = new decimal(new int[] {
             60000,
             0,
             0,
             0});
-            this.NumericUpDown3.Name = "NumericUpDown3";
-            this.NumericUpDown3.Size = new System.Drawing.Size(219, 20);
-            this.NumericUpDown3.TabIndex = 13;
+            this.LineInDelayValue_NumericUpDown.Name = "LineInDelayValue_NumericUpDown";
+            this.LineInDelayValue_NumericUpDown.Size = new System.Drawing.Size(219, 20);
+            this.LineInDelayValue_NumericUpDown.TabIndex = 13;
             // 
-            // Label11
+            // LineInDelay_Label
             // 
-            this.Label11.AutoSize = true;
-            this.Label11.Location = new System.Drawing.Point(6, 50);
-            this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(72, 13);
-            this.Label11.TabIndex = 2;
-            this.Label11.Text = "Line-In-Delay:";
+            this.LineInDelay_Label.AutoSize = true;
+            this.LineInDelay_Label.Location = new System.Drawing.Point(6, 50);
+            this.LineInDelay_Label.Name = "LineInDelay_Label";
+            this.LineInDelay_Label.Size = new System.Drawing.Size(72, 13);
+            this.LineInDelay_Label.TabIndex = 2;
+            this.LineInDelay_Label.Text = "Line-In-Delay:";
             // 
-            // NumericUpDown2
+            // StartBotDelay_NumericUpDown
             // 
-            this.NumericUpDown2.Increment = new decimal(new int[] {
+            this.StartBotDelay_NumericUpDown.Increment = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.NumericUpDown2.Location = new System.Drawing.Point(93, 22);
-            this.NumericUpDown2.Maximum = new decimal(new int[] {
+            this.StartBotDelay_NumericUpDown.Location = new System.Drawing.Point(93, 22);
+            this.StartBotDelay_NumericUpDown.Maximum = new decimal(new int[] {
             60000,
             0,
             0,
             0});
-            this.NumericUpDown2.Minimum = new decimal(new int[] {
+            this.StartBotDelay_NumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.NumericUpDown2.Name = "NumericUpDown2";
-            this.NumericUpDown2.Size = new System.Drawing.Size(219, 20);
-            this.NumericUpDown2.TabIndex = 12;
-            this.NumericUpDown2.Value = new decimal(new int[] {
+            this.StartBotDelay_NumericUpDown.Name = "StartBotDelay_NumericUpDown";
+            this.StartBotDelay_NumericUpDown.Size = new System.Drawing.Size(219, 20);
+            this.StartBotDelay_NumericUpDown.TabIndex = 12;
+            this.StartBotDelay_NumericUpDown.Value = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             // 
-            // Label10
+            // StartBotDelay_Label
             // 
-            this.Label10.AutoSize = true;
-            this.Label10.Location = new System.Drawing.Point(6, 24);
-            this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(81, 13);
-            this.Label10.TabIndex = 0;
-            this.Label10.Text = "Start-Bot-Delay:";
+            this.StartBotDelay_Label.AutoSize = true;
+            this.StartBotDelay_Label.Location = new System.Drawing.Point(6, 24);
+            this.StartBotDelay_Label.Name = "StartBotDelay_Label";
+            this.StartBotDelay_Label.Size = new System.Drawing.Size(81, 13);
+            this.StartBotDelay_Label.TabIndex = 0;
+            this.StartBotDelay_Label.Text = "Start-Bot-Delay:";
             // 
-            // Button4
+            // PressToStopBot_Button
             // 
-            this.Button4.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button4.Location = new System.Drawing.Point(12, 12);
-            this.Button4.Name = "Button4";
-            this.Button4.Size = new System.Drawing.Size(320, 62);
-            this.Button4.TabIndex = 31;
-            this.Button4.Text = "Press To Stop Bot";
-            this.Button4.UseVisualStyleBackColor = true;
-            this.Button4.Visible = false;
-            this.Button4.Click += new System.EventHandler(this.Button4_Click);
+            this.PressToStopBot_Button.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PressToStopBot_Button.Location = new System.Drawing.Point(12, 12);
+            this.PressToStopBot_Button.Name = "PressToStopBot_Button";
+            this.PressToStopBot_Button.Size = new System.Drawing.Size(320, 62);
+            this.PressToStopBot_Button.TabIndex = 31;
+            this.PressToStopBot_Button.Text = "Press To Stop Bot";
+            this.PressToStopBot_Button.UseVisualStyleBackColor = true;
+            this.PressToStopBot_Button.Visible = false;
+            this.PressToStopBot_Button.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // Button5
+            // PressToStartBot_Button
             // 
-            this.Button5.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button5.Location = new System.Drawing.Point(12, 12);
-            this.Button5.Name = "Button5";
-            this.Button5.Size = new System.Drawing.Size(320, 62);
-            this.Button5.TabIndex = 30;
-            this.Button5.Text = "Press To Start Bot";
-            this.Button5.UseVisualStyleBackColor = true;
-            this.Button5.Click += new System.EventHandler(this.Button5_Click);
+            this.PressToStartBot_Button.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PressToStartBot_Button.Location = new System.Drawing.Point(12, 12);
+            this.PressToStartBot_Button.Name = "PressToStartBot_Button";
+            this.PressToStartBot_Button.Size = new System.Drawing.Size(320, 62);
+            this.PressToStartBot_Button.TabIndex = 30;
+            this.PressToStartBot_Button.Text = "Press To Start Bot";
+            this.PressToStartBot_Button.UseVisualStyleBackColor = true;
+            this.PressToStartBot_Button.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // GroupBox3
+            // FishingOptions_GroupBox
             // 
-            this.GroupBox3.Controls.Add(this.numericUpDown7);
-            this.GroupBox3.Controls.Add(this.checkBox12);
-            this.GroupBox3.Controls.Add(this.checkBox9);
-            this.GroupBox3.Controls.Add(this.checkBox11);
-            this.GroupBox3.Controls.Add(this.NumericUpDown1);
-            this.GroupBox3.Controls.Add(this.checkBox5);
-            this.GroupBox3.Controls.Add(this.checkBox4);
-            this.GroupBox3.Controls.Add(this.checkBox3);
-            this.GroupBox3.Controls.Add(this.checkBox2);
-            this.GroupBox3.Controls.Add(this.checkBox1);
-            this.GroupBox3.Enabled = false;
-            this.GroupBox3.Location = new System.Drawing.Point(12, 133);
-            this.GroupBox3.Name = "GroupBox3";
-            this.GroupBox3.Size = new System.Drawing.Size(160, 207);
-            this.GroupBox3.TabIndex = 34;
-            this.GroupBox3.TabStop = false;
-            this.GroupBox3.Text = "Fishing Options";
+            this.FishingOptions_GroupBox.Controls.Add(this.SwingOffsetValue_NumericUpDown);
+            this.FishingOptions_GroupBox.Controls.Add(this.SwingOffset_CheckBox);
+            this.FishingOptions_GroupBox.Controls.Add(this.UnlimitedThrows_CheckBox);
+            this.FishingOptions_GroupBox.Controls.Add(this.CloseBotWhenFinished_CheckBox);
+            this.FishingOptions_GroupBox.Controls.Add(this.CustomThrowsValue_NumericUpDown);
+            this.FishingOptions_GroupBox.Controls.Add(this.LeaveWhenFinished_CheckBox);
+            this.FishingOptions_GroupBox.Controls.Add(this.AutoEjectRod_CheckBox);
+            this.FishingOptions_GroupBox.Controls.Add(this.Save1HP_CheckBox);
+            this.FishingOptions_GroupBox.Controls.Add(this.UseHotbarScrolling_CheckBox);
+            this.FishingOptions_GroupBox.Controls.Add(this.CustomThrows_CheckBox);
+            this.FishingOptions_GroupBox.Enabled = false;
+            this.FishingOptions_GroupBox.Location = new System.Drawing.Point(12, 133);
+            this.FishingOptions_GroupBox.Name = "FishingOptions_GroupBox";
+            this.FishingOptions_GroupBox.Size = new System.Drawing.Size(160, 207);
+            this.FishingOptions_GroupBox.TabIndex = 34;
+            this.FishingOptions_GroupBox.TabStop = false;
+            this.FishingOptions_GroupBox.Text = "Fishing Options";
             // 
-            // numericUpDown7
+            // SwingOffsetValue_NumericUpDown
             // 
-            this.numericUpDown7.Enabled = false;
-            this.numericUpDown7.Location = new System.Drawing.Point(98, 180);
-            this.numericUpDown7.Maximum = new decimal(new int[] {
+            this.SwingOffsetValue_NumericUpDown.Enabled = false;
+            this.SwingOffsetValue_NumericUpDown.Location = new System.Drawing.Point(98, 180);
+            this.SwingOffsetValue_NumericUpDown.Maximum = new decimal(new int[] {
             2500,
             0,
             0,
             0});
-            this.numericUpDown7.Minimum = new decimal(new int[] {
+            this.SwingOffsetValue_NumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(56, 20);
-            this.numericUpDown7.TabIndex = 13;
-            this.numericUpDown7.Value = new decimal(new int[] {
+            this.SwingOffsetValue_NumericUpDown.Name = "SwingOffsetValue_NumericUpDown";
+            this.SwingOffsetValue_NumericUpDown.Size = new System.Drawing.Size(56, 20);
+            this.SwingOffsetValue_NumericUpDown.TabIndex = 13;
+            this.SwingOffsetValue_NumericUpDown.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
             // 
-            // checkBox12
+            // SwingOffset_CheckBox
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(6, 182);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(86, 17);
-            this.checkBox12.TabIndex = 12;
-            this.checkBox12.Text = "Swing Offset";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            this.checkBox12.CheckedChanged += new System.EventHandler(this.CheckBox12_CheckedChanged);
+            this.SwingOffset_CheckBox.AutoSize = true;
+            this.SwingOffset_CheckBox.Location = new System.Drawing.Point(6, 182);
+            this.SwingOffset_CheckBox.Name = "SwingOffset_CheckBox";
+            this.SwingOffset_CheckBox.Size = new System.Drawing.Size(86, 17);
+            this.SwingOffset_CheckBox.TabIndex = 12;
+            this.SwingOffset_CheckBox.Text = "Swing Offset";
+            this.SwingOffset_CheckBox.UseVisualStyleBackColor = true;
+            this.SwingOffset_CheckBox.CheckedChanged += new System.EventHandler(this.CheckBox12_CheckedChanged);
             // 
-            // checkBox9
+            // UnlimitedThrows_CheckBox
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(6, 113);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(107, 17);
-            this.checkBox9.TabIndex = 11;
-            this.checkBox9.Text = "Unlimited Throws";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            this.checkBox9.CheckedChanged += new System.EventHandler(this.CheckBox9_CheckedChanged);
+            this.UnlimitedThrows_CheckBox.AutoSize = true;
+            this.UnlimitedThrows_CheckBox.Location = new System.Drawing.Point(6, 113);
+            this.UnlimitedThrows_CheckBox.Name = "UnlimitedThrows_CheckBox";
+            this.UnlimitedThrows_CheckBox.Size = new System.Drawing.Size(107, 17);
+            this.UnlimitedThrows_CheckBox.TabIndex = 11;
+            this.UnlimitedThrows_CheckBox.Text = "Unlimited Throws";
+            this.UnlimitedThrows_CheckBox.UseVisualStyleBackColor = true;
+            this.UnlimitedThrows_CheckBox.CheckedChanged += new System.EventHandler(this.CheckBox9_CheckedChanged);
             // 
-            // checkBox11
+            // CloseBotWhenFinished_CheckBox
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(6, 159);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(145, 17);
-            this.checkBox11.TabIndex = 10;
-            this.checkBox11.Text = "Close Bot When Finished";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.CloseBotWhenFinished_CheckBox.AutoSize = true;
+            this.CloseBotWhenFinished_CheckBox.Location = new System.Drawing.Point(6, 159);
+            this.CloseBotWhenFinished_CheckBox.Name = "CloseBotWhenFinished_CheckBox";
+            this.CloseBotWhenFinished_CheckBox.Size = new System.Drawing.Size(145, 17);
+            this.CloseBotWhenFinished_CheckBox.TabIndex = 10;
+            this.CloseBotWhenFinished_CheckBox.Text = "Close Bot When Finished";
+            this.CloseBotWhenFinished_CheckBox.UseVisualStyleBackColor = true;
             // 
-            // NumericUpDown1
+            // CustomThrowsValue_NumericUpDown
             // 
-            this.NumericUpDown1.Enabled = false;
-            this.NumericUpDown1.Location = new System.Drawing.Point(111, 19);
-            this.NumericUpDown1.Maximum = new decimal(new int[] {
+            this.CustomThrowsValue_NumericUpDown.Enabled = false;
+            this.CustomThrowsValue_NumericUpDown.Location = new System.Drawing.Point(111, 19);
+            this.CustomThrowsValue_NumericUpDown.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.NumericUpDown1.Minimum = new decimal(new int[] {
+            this.CustomThrowsValue_NumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.NumericUpDown1.Name = "NumericUpDown1";
-            this.NumericUpDown1.Size = new System.Drawing.Size(43, 20);
-            this.NumericUpDown1.TabIndex = 4;
-            this.NumericUpDown1.Value = new decimal(new int[] {
+            this.CustomThrowsValue_NumericUpDown.Name = "CustomThrowsValue_NumericUpDown";
+            this.CustomThrowsValue_NumericUpDown.Size = new System.Drawing.Size(43, 20);
+            this.CustomThrowsValue_NumericUpDown.TabIndex = 4;
+            this.CustomThrowsValue_NumericUpDown.Value = new decimal(new int[] {
             64,
             0,
             0,
             0});
             // 
-            // checkBox5
+            // LeaveWhenFinished_CheckBox
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 136);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(130, 17);
-            this.checkBox5.TabIndex = 9;
-            this.checkBox5.Text = "Leave When Finished";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.LeaveWhenFinished_CheckBox.AutoSize = true;
+            this.LeaveWhenFinished_CheckBox.Location = new System.Drawing.Point(6, 136);
+            this.LeaveWhenFinished_CheckBox.Name = "LeaveWhenFinished_CheckBox";
+            this.LeaveWhenFinished_CheckBox.Size = new System.Drawing.Size(130, 17);
+            this.LeaveWhenFinished_CheckBox.TabIndex = 9;
+            this.LeaveWhenFinished_CheckBox.Text = "Leave When Finished";
+            this.LeaveWhenFinished_CheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // AutoEjectRod_CheckBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 90);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(98, 17);
-            this.checkBox4.TabIndex = 7;
-            this.checkBox4.Text = "Auto Eject Rod";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged);
+            this.AutoEjectRod_CheckBox.AutoSize = true;
+            this.AutoEjectRod_CheckBox.Location = new System.Drawing.Point(6, 90);
+            this.AutoEjectRod_CheckBox.Name = "AutoEjectRod_CheckBox";
+            this.AutoEjectRod_CheckBox.Size = new System.Drawing.Size(98, 17);
+            this.AutoEjectRod_CheckBox.TabIndex = 7;
+            this.AutoEjectRod_CheckBox.Text = "Auto Eject Rod";
+            this.AutoEjectRod_CheckBox.UseVisualStyleBackColor = true;
+            this.AutoEjectRod_CheckBox.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged);
             // 
-            // checkBox3
+            // Save1HP_CheckBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 67);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(78, 17);
-            this.checkBox3.TabIndex = 6;
-            this.checkBox3.Text = "Save 1 HP";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.CheckBox3_CheckedChanged);
+            this.Save1HP_CheckBox.AutoSize = true;
+            this.Save1HP_CheckBox.Location = new System.Drawing.Point(6, 67);
+            this.Save1HP_CheckBox.Name = "Save1HP_CheckBox";
+            this.Save1HP_CheckBox.Size = new System.Drawing.Size(78, 17);
+            this.Save1HP_CheckBox.TabIndex = 6;
+            this.Save1HP_CheckBox.Text = "Save 1 HP";
+            this.Save1HP_CheckBox.UseVisualStyleBackColor = true;
+            this.Save1HP_CheckBox.CheckedChanged += new System.EventHandler(this.CheckBox3_CheckedChanged);
             // 
-            // checkBox2
+            // UseHotbarScrolling_CheckBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 44);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(123, 17);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Use Hotbar Scrolling";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.UseHotbarScrolling_CheckBox.AutoSize = true;
+            this.UseHotbarScrolling_CheckBox.Location = new System.Drawing.Point(6, 44);
+            this.UseHotbarScrolling_CheckBox.Name = "UseHotbarScrolling_CheckBox";
+            this.UseHotbarScrolling_CheckBox.Size = new System.Drawing.Size(123, 17);
+            this.UseHotbarScrolling_CheckBox.TabIndex = 5;
+            this.UseHotbarScrolling_CheckBox.Text = "Use Hotbar Scrolling";
+            this.UseHotbarScrolling_CheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // CustomThrows_CheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 21);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(99, 17);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Custom Throws";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            this.CustomThrows_CheckBox.AutoSize = true;
+            this.CustomThrows_CheckBox.Location = new System.Drawing.Point(6, 21);
+            this.CustomThrows_CheckBox.Name = "CustomThrows_CheckBox";
+            this.CustomThrows_CheckBox.Size = new System.Drawing.Size(99, 17);
+            this.CustomThrows_CheckBox.TabIndex = 3;
+            this.CustomThrows_CheckBox.Text = "Custom Throws";
+            this.CustomThrows_CheckBox.UseVisualStyleBackColor = true;
+            this.CustomThrows_CheckBox.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
-            // GroupBox2
+            // SoundVUSensitivity_GroupBox
             // 
-            this.GroupBox2.Controls.Add(this.label4);
-            this.GroupBox2.Controls.Add(this.numericUpDown6);
-            this.GroupBox2.Enabled = false;
-            this.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.GroupBox2.Location = new System.Drawing.Point(12, 80);
-            this.GroupBox2.Name = "GroupBox2";
-            this.GroupBox2.Size = new System.Drawing.Size(320, 47);
-            this.GroupBox2.TabIndex = 29;
-            this.GroupBox2.TabStop = false;
-            this.GroupBox2.Text = "Sound VU Sensitivity (Volume Level) --- [0% - 100%]";
+            this.SoundVUSensitivity_GroupBox.Controls.Add(this.TriggerBotAt_Label);
+            this.SoundVUSensitivity_GroupBox.Controls.Add(this.TriggerBotAtValue_NumericUpDown);
+            this.SoundVUSensitivity_GroupBox.Enabled = false;
+            this.SoundVUSensitivity_GroupBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SoundVUSensitivity_GroupBox.Location = new System.Drawing.Point(12, 80);
+            this.SoundVUSensitivity_GroupBox.Name = "SoundVUSensitivity_GroupBox";
+            this.SoundVUSensitivity_GroupBox.Size = new System.Drawing.Size(320, 47);
+            this.SoundVUSensitivity_GroupBox.TabIndex = 29;
+            this.SoundVUSensitivity_GroupBox.TabStop = false;
+            this.SoundVUSensitivity_GroupBox.Text = "Sound VU Sensitivity (Volume Level) --- [0% - 100%]";
             // 
-            // label4
+            // TriggerBotAt_Label
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Trigger Bot At:";
+            this.TriggerBotAt_Label.AutoSize = true;
+            this.TriggerBotAt_Label.Location = new System.Drawing.Point(6, 21);
+            this.TriggerBotAt_Label.Name = "TriggerBotAt_Label";
+            this.TriggerBotAt_Label.Size = new System.Drawing.Size(75, 13);
+            this.TriggerBotAt_Label.TabIndex = 17;
+            this.TriggerBotAt_Label.Text = "Trigger Bot At:";
             // 
-            // numericUpDown6
+            // TriggerBotAtValue_NumericUpDown
             // 
-            this.numericUpDown6.Increment = new decimal(new int[] {
+            this.TriggerBotAtValue_NumericUpDown.Increment = new decimal(new int[] {
             2,
             0,
             0,
             0});
-            this.numericUpDown6.Location = new System.Drawing.Point(87, 19);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(225, 20);
-            this.numericUpDown6.TabIndex = 16;
-            this.numericUpDown6.Value = new decimal(new int[] {
+            this.TriggerBotAtValue_NumericUpDown.Location = new System.Drawing.Point(87, 19);
+            this.TriggerBotAtValue_NumericUpDown.Name = "TriggerBotAtValue_NumericUpDown";
+            this.TriggerBotAtValue_NumericUpDown.Size = new System.Drawing.Size(225, 20);
+            this.TriggerBotAtValue_NumericUpDown.TabIndex = 16;
+            this.TriggerBotAtValue_NumericUpDown.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
             // 
-            // GroupBox1
-            // 
-            this.GroupBox1.Controls.Add(this.checkBox6);
-            this.GroupBox1.Controls.Add(this.checkBox8);
-            this.GroupBox1.Controls.Add(this.checkBox7);
-            this.GroupBox1.Controls.Add(this.Label17);
-            this.GroupBox1.Controls.Add(this.Label16);
-            this.GroupBox1.Controls.Add(this.Label14);
-            this.GroupBox1.Controls.Add(this.Label13);
-            this.GroupBox1.Controls.Add(this.Label9);
-            this.GroupBox1.Controls.Add(this.MyX_MyY);
-            this.GroupBox1.Controls.Add(this.Label8);
-            this.GroupBox1.Controls.Add(this.Label7);
-            this.GroupBox1.Controls.Add(this.Label6);
-            this.GroupBox1.Controls.Add(this.Label3);
-            this.GroupBox1.Controls.Add(this.Label2);
-            this.GroupBox1.Controls.Add(this.Label1);
-            this.GroupBox1.Enabled = false;
-            this.GroupBox1.Location = new System.Drawing.Point(178, 133);
-            this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(154, 153);
-            this.GroupBox1.TabIndex = 33;
-            this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "Bot Stats:";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(133, 19);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 34;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.Visible = false;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(133, 59);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 33;
-            this.checkBox8.UseVisualStyleBackColor = true;
-            this.checkBox8.Visible = false;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(133, 39);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 32;
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.Visible = false;
-            // 
-            // Label17
-            // 
-            this.Label17.AutoSize = true;
-            this.Label17.Location = new System.Drawing.Point(103, 132);
-            this.Label17.Name = "Label17";
-            this.Label17.Size = new System.Drawing.Size(13, 13);
-            this.Label17.TabIndex = 31;
-            this.Label17.Text = "0";
-            // 
-            // Label16
-            // 
-            this.Label16.AutoSize = true;
-            this.Label16.Location = new System.Drawing.Point(6, 132);
-            this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(96, 13);
-            this.Label16.TabIndex = 30;
-            this.Label16.Text = "Current Scroll Rod:";
-            // 
-            // Label14
-            // 
-            this.Label14.AutoSize = true;
-            this.Label14.Location = new System.Drawing.Point(103, 119);
-            this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(13, 13);
-            this.Label14.TabIndex = 28;
-            this.Label14.Text = "0";
-            // 
-            // Label13
-            // 
-            this.Label13.AutoSize = true;
-            this.Label13.Location = new System.Drawing.Point(6, 119);
-            this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(96, 13);
-            this.Label13.TabIndex = 27;
-            this.Label13.Text = "Current Rod Casts:";
-            // 
-            // Label9
-            // 
-            this.Label9.AutoSize = true;
-            this.Label9.Location = new System.Drawing.Point(78, 35);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(21, 13);
-            this.Label9.TabIndex = 26;
-            this.Label9.Text = "Na";
-            // 
-            // MyX_MyY
-            // 
-            this.MyX_MyY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.MyX_MyY.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MyX_MyY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyX_MyY.Location = new System.Drawing.Point(9, 91);
-            this.MyX_MyY.Name = "MyX_MyY";
-            this.MyX_MyY.ReadOnly = true;
-            this.MyX_MyY.Size = new System.Drawing.Size(91, 14);
-            this.MyX_MyY.TabIndex = 19;
-            this.MyX_MyY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.MyX_MyY.Visible = false;
-            // 
-            // Label8
-            // 
-            this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(6, 35);
-            this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(71, 13);
-            this.Label8.TabIndex = 25;
-            this.Label8.Text = "Process Version:";
-            // 
-            // Label7
-            // 
-            this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(6, 48);
-            this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(59, 13);
-            this.Label7.TabIndex = 24;
-            this.Label7.Text = "Recources";
-            // 
-            // Label6
-            // 
-            this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(101, 106);
-            this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(13, 13);
-            this.Label6.TabIndex = 23;
-            this.Label6.Text = "0";
-            // 
-            // Label3
-            // 
-            this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(92, 22);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(13, 13);
-            this.Label3.TabIndex = 22;
-            this.Label3.Text = "0";
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(6, 106);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(94, 13);
-            this.Label2.TabIndex = 21;
-            this.Label2.Text = "Total Lines Pulled:";
-            // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(6, 22);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(85, 13);
-            this.Label1.TabIndex = 20;
-            this.Label1.Text = "Game Processes:";
-            // 
-            // StatusStrip1
-            // 
-            this.StatusStrip1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StatusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripStatusLabel2,
-            this.ToolStripStatusLabel1,
-            this.toolStripStatusLabel7,
-            this.toolStripStatusLabel4,
-            this.toolStripStatusLabel5,
-            this.toolStripStatusLabel6,
-            this.toolStripDropDownButton1});
-            this.StatusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.StatusStrip1.Location = new System.Drawing.Point(0, 483);
-            this.StatusStrip1.Name = "StatusStrip1";
-            this.StatusStrip1.Size = new System.Drawing.Size(341, 41);
-            this.StatusStrip1.SizingGrip = false;
-            this.StatusStrip1.TabIndex = 32;
-            this.StatusStrip1.Text = "StatusStrip1";
-            // 
-            // ToolStripStatusLabel2
-            // 
-            this.ToolStripStatusLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2";
-            this.ToolStripStatusLabel2.Size = new System.Drawing.Size(76, 15);
-            this.ToolStripStatusLabel2.Text = "Game Status:";
-            // 
-            // ToolStripStatusLabel1
-            // 
-            this.ToolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.DarkRed;
-            this.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
-            this.ToolStripStatusLabel1.Size = new System.Drawing.Size(64, 15);
-            this.ToolStripStatusLabel1.Text = "Not Found";
-            // 
-            // toolStripStatusLabel7
-            // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(10, 15);
-            this.toolStripStatusLabel7.Text = "|";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(55, 15);
-            this.toolStripStatusLabel4.Text = "VU Level:";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(29, 15);
-            this.toolStripStatusLabel5.Text = "N/A";
-            // 
-            // toolStripStatusLabel6
-            // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(65, 15);
-            this.toolStripStatusLabel6.Text = "- [Capture]";
-            this.toolStripStatusLabel6.Click += new System.EventHandler(this.ToolStripStatusLabel6_Click);
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.javaToolStripMenuItem,
-            this.bedrockToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(87, 19);
-            this.toolStripDropDownButton1.Text = "Version: Java";
-            this.toolStripDropDownButton1.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStripDropDownButton1_DropDownItemClicked);
-            // 
-            // bedrockToolStripMenuItem
-            // 
-            this.bedrockToolStripMenuItem.Name = "bedrockToolStripMenuItem";
-            this.bedrockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.bedrockToolStripMenuItem.Text = "Bedrock";
-            // 
-            // javaToolStripMenuItem
-            // 
-            this.javaToolStripMenuItem.Name = "javaToolStripMenuItem";
-            this.javaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.javaToolStripMenuItem.Text = "Java";
-            // 
-            // Timer1
-            // 
-            this.Timer1.Interval = 1;
-            this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // Timer2
-            // 
-            this.Timer2.Enabled = true;
-            this.Timer2.Interval = 1;
-            this.Timer2.Tick += new System.EventHandler(this.Timer2_Tick);
-            // 
-            // Timer3
-            // 
-            this.Timer3.Interval = 1;
-            // 
-            // Timer4
-            // 
-            this.Timer4.Interval = 1;
-            // 
-            // Timer5
-            // 
-            this.Timer5.Interval = 5000;
-            this.Timer5.Tick += new System.EventHandler(this.Timer5_Tick);
-            // 
-            // Timer6
-            // 
-            this.Timer6.Interval = 1;
-            // 
-            // Timer7
-            // 
-            this.Timer7.Interval = 120000;
-            this.Timer7.Tick += new System.EventHandler(this.Timer7_Tick);
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(320, 62);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "Loading... Please Wait.";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
-            // timer8
-            // 
-            this.timer8.Enabled = true;
-            // 
-            // timer9
-            // 
-            this.timer9.Interval = 60000;
-            this.timer9.Tick += new System.EventHandler(this.Timer9_Tick);
-            // 
-            // timer10
-            // 
-            this.timer10.Interval = 1;
-            this.timer10.Tick += new System.EventHandler(this.Timer10_Tick);
-            // 
-            // Main
+            // BotStatus_GroupBox
+            // 
+            this.BotStatus_GroupBox.Controls.Add(this.Debug_CheckBox1);
+            this.BotStatus_GroupBox.Controls.Add(this.Debug_CheckBox3);
+            this.BotStatus_GroupBox.Controls.Add(this.Debug_CheckBox2);
+            this.BotStatus_GroupBox.Controls.Add(this.CurrentScrollRodValue_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.CurrentScrollRod_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.CurrentRodCastsValue_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.CurrentRodCasts_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.ProcessVersionValue_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.XY_TextBox);
+            this.BotStatus_GroupBox.Controls.Add(this.ProcessVersion_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.Resources_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.TotalLinesPulledValue_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.GameProcessesValue_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.TotalLinesPulled_Label);
+            this.BotStatus_GroupBox.Controls.Add(this.GameProcesses_Label);
+            this.BotStatus_GroupBox.Enabled = false;
+            this.BotStatus_GroupBox.Location = new System.Drawing.Point(178, 133);
+            this.BotStatus_GroupBox.Name = "BotStatus_GroupBox";
+            this.BotStatus_GroupBox.Size = new System.Drawing.Size(154, 153);
+            this.BotStatus_GroupBox.TabIndex = 33;
+            this.BotStatus_GroupBox.TabStop = false;
+            this.BotStatus_GroupBox.Text = "Bot Stats:";
+            // 
+            // Debug_CheckBox1
+            // 
+            this.Debug_CheckBox1.AutoSize = true;
+            this.Debug_CheckBox1.Location = new System.Drawing.Point(133, 19);
+            this.Debug_CheckBox1.Name = "Debug_CheckBox1";
+            this.Debug_CheckBox1.Size = new System.Drawing.Size(15, 14);
+            this.Debug_CheckBox1.TabIndex = 34;
+            this.Debug_CheckBox1.UseVisualStyleBackColor = true;
+            this.Debug_CheckBox1.Visible = false;
+            // 
+            // Debug_CheckBox3
+            // 
+            this.Debug_CheckBox3.AutoSize = true;
+            this.Debug_CheckBox3.Location = new System.Drawing.Point(133, 59);
+            this.Debug_CheckBox3.Name = "Debug_CheckBox3";
+            this.Debug_CheckBox3.Size = new System.Drawing.Size(15, 14);
+            this.Debug_CheckBox3.TabIndex = 33;
+            this.Debug_CheckBox3.UseVisualStyleBackColor = true;
+            this.Debug_CheckBox3.Visible = false;
+            // 
+            // Debug_CheckBox2
+            // 
+            this.Debug_CheckBox2.AutoSize = true;
+            this.Debug_CheckBox2.Location = new System.Drawing.Point(133, 39);
+            this.Debug_CheckBox2.Name = "Debug_CheckBox2";
+            this.Debug_CheckBox2.Size = new System.Drawing.Size(15, 14);
+            this.Debug_CheckBox2.TabIndex = 32;
+            this.Debug_CheckBox2.UseVisualStyleBackColor = true;
+            this.Debug_CheckBox2.Visible = false;
+            // 
+            // CurrentScrollRodValue_Label
+            // 
+            this.CurrentScrollRodValue_Label.AutoSize = true;
+            this.CurrentScrollRodValue_Label.Location = new System.Drawing.Point(103, 132);
+            this.CurrentScrollRodValue_Label.Name = "CurrentScrollRodValue_Label";
+            this.CurrentScrollRodValue_Label.Size = new System.Drawing.Size(13, 13);
+            this.CurrentScrollRodValue_Label.TabIndex = 31;
+            this.CurrentScrollRodValue_Label.Text = "0";
+            // 
+            // CurrentScrollRod_Label
+            // 
+            this.CurrentScrollRod_Label.AutoSize = true;
+            this.CurrentScrollRod_Label.Location = new System.Drawing.Point(6, 132);
+            this.CurrentScrollRod_Label.Name = "CurrentScrollRod_Label";
+            this.CurrentScrollRod_Label.Size = new System.Drawing.Size(96, 13);
+            this.CurrentScrollRod_Label.TabIndex = 30;
+            this.CurrentScrollRod_Label.Text = "Current Scroll Rod:";
+            // 
+            // CurrentRodCastsValue_Label
+            // 
+            this.CurrentRodCastsValue_Label.AutoSize = true;
+            this.CurrentRodCastsValue_Label.Location = new System.Drawing.Point(103, 119);
+            this.CurrentRodCastsValue_Label.Name = "CurrentRodCastsValue_Label";
+            this.CurrentRodCastsValue_Label.Size = new System.Drawing.Size(13, 13);
+            this.CurrentRodCastsValue_Label.TabIndex = 28;
+            this.CurrentRodCastsValue_Label.Text = "0";
+            // 
+            // CurrentRodCasts_Label
+            // 
+            this.CurrentRodCasts_Label.AutoSize = true;
+            this.CurrentRodCasts_Label.Location = new System.Drawing.Point(6, 119);
+            this.CurrentRodCasts_Label.Name = "CurrentRodCasts_Label";
+            this.CurrentRodCasts_Label.Size = new System.Drawing.Size(96, 13);
+            this.CurrentRodCasts_Label.TabIndex = 27;
+            this.CurrentRodCasts_Label.Text = "Current Rod Casts:";
+            // 
+            // ProcessVersionValue_Label
+            // 
+            this.ProcessVersionValue_Label.AutoSize = true;
+            this.ProcessVersionValue_Label.Location = new System.Drawing.Point(88, 35);
+            this.ProcessVersionValue_Label.Name = "ProcessVersionValue_Label";
+            this.ProcessVersionValue_Label.Size = new System.Drawing.Size(21, 13);
+            this.ProcessVersionValue_Label.TabIndex = 26;
+            this.ProcessVersionValue_Label.Text = "Na";
+            // 
+            // XY_TextBox
+            // 
+            this.XY_TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.XY_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.XY_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XY_TextBox.Location = new System.Drawing.Point(9, 91);
+            this.XY_TextBox.Name = "XY_TextBox";
+            this.XY_TextBox.ReadOnly = true;
+            this.XY_TextBox.Size = new System.Drawing.Size(91, 14);
+            this.XY_TextBox.TabIndex = 19;
+            this.XY_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.XY_TextBox.Visible = false;
+            // 
+            // ProcessVersion_Label
+            // 
+            this.ProcessVersion_Label.AutoSize = true;
+            this.ProcessVersion_Label.Location = new System.Drawing.Point(6, 35);
+            this.ProcessVersion_Label.Name = "ProcessVersion_Label";
+            this.ProcessVersion_Label.Size = new System.Drawing.Size(86, 13);
+            this.ProcessVersion_Label.TabIndex = 25;
+            this.ProcessVersion_Label.Text = "Process Version:";
+            // 
+            // Resources_Label
+            // 
+            this.Resources_Label.AutoSize = true;
+            this.Resources_Label.Location = new System.Drawing.Point(6, 48);
+            this.Resources_Label.Name = "Resources_Label";
+            this.Resources_Label.Size = new System.Drawing.Size(59, 13);
+            this.Resources_Label.TabIndex = 24;
+            this.Resources_Label.Text = "Recources";
+            // 
+            // TotalLinesPulledValue_Label
+            // 
+            this.TotalLinesPulledValue_Label.AutoSize = true;
+            this.TotalLinesPulledValue_Label.Location = new System.Drawing.Point(101, 106);
+            this.TotalLinesPulledValue_Label.Name = "TotalLinesPulledValue_Label";
+            this.TotalLinesPulledValue_Label.Size = new System.Drawing.Size(13, 13);
+            this.TotalLinesPulledValue_Label.TabIndex = 23;
+            this.TotalLinesPulledValue_Label.Text = "0";
+            // 
+            // GameProcessesValue_Label
+            // 
+            this.GameProcessesValue_Label.AutoSize = true;
+            this.GameProcessesValue_Label.Location = new System.Drawing.Point(92, 22);
+            this.GameProcessesValue_Label.Name = "GameProcessesValue_Label";
+            this.GameProcessesValue_Label.Size = new System.Drawing.Size(13, 13);
+            this.GameProcessesValue_Label.TabIndex = 22;
+            this.GameProcessesValue_Label.Text = "0";
+            // 
+            // TotalLinesPulled_Label
+            // 
+            this.TotalLinesPulled_Label.AutoSize = true;
+            this.TotalLinesPulled_Label.Location = new System.Drawing.Point(6, 106);
+            this.TotalLinesPulled_Label.Name = "TotalLinesPulled_Label";
+            this.TotalLinesPulled_Label.Size = new System.Drawing.Size(94, 13);
+            this.TotalLinesPulled_Label.TabIndex = 21;
+            this.TotalLinesPulled_Label.Text = "Total Lines Pulled:";
+            // 
+            // GameProcesses_Label
+            // 
+            this.GameProcesses_Label.AutoSize = true;
+            this.GameProcesses_Label.Location = new System.Drawing.Point(6, 22);
+            this.GameProcesses_Label.Name = "GameProcesses_Label";
+            this.GameProcesses_Label.Size = new System.Drawing.Size(90, 13);
+            this.GameProcesses_Label.TabIndex = 20;
+            this.GameProcesses_Label.Text = "Game Processes:";
+            // 
+            // Bot_StatusStrip
+            // 
+            this.Bot_StatusStrip.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Bot_StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.GameStatus_ToolStripStatusLabel,
+            this.GameStatusValue_ToolStripStatusLabel,
+            this.Seperator_ToolStripStatusLabel,
+            this.VULevel_ToolStripStatusLabel,
+            this.VULevelValue_ToolStripStatusLabel,
+            this.Capture_ToolStripStatusLabel,
+            this.Version_ToolStripDropDownButton});
+            this.Bot_StatusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.Bot_StatusStrip.Location = new System.Drawing.Point(0, 483);
+            this.Bot_StatusStrip.Name = "Bot_StatusStrip";
+            this.Bot_StatusStrip.Size = new System.Drawing.Size(341, 41);
+            this.Bot_StatusStrip.SizingGrip = false;
+            this.Bot_StatusStrip.TabIndex = 32;
+            this.Bot_StatusStrip.Text = "StatusStrip1";
+            // 
+            // GameStatus_ToolStripStatusLabel
+            // 
+            this.GameStatus_ToolStripStatusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.GameStatus_ToolStripStatusLabel.Name = "GameStatus_ToolStripStatusLabel";
+            this.GameStatus_ToolStripStatusLabel.Size = new System.Drawing.Size(76, 15);
+            this.GameStatus_ToolStripStatusLabel.Text = "Game Status:";
+            // 
+            // GameStatusValue_ToolStripStatusLabel
+            // 
+            this.GameStatusValue_ToolStripStatusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.GameStatusValue_ToolStripStatusLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.GameStatusValue_ToolStripStatusLabel.Name = "GameStatusValue_ToolStripStatusLabel";
+            this.GameStatusValue_ToolStripStatusLabel.Size = new System.Drawing.Size(64, 15);
+            this.GameStatusValue_ToolStripStatusLabel.Text = "Not Found";
+            // 
+            // Seperator_ToolStripStatusLabel
+            // 
+            this.Seperator_ToolStripStatusLabel.Name = "Seperator_ToolStripStatusLabel";
+            this.Seperator_ToolStripStatusLabel.Size = new System.Drawing.Size(10, 15);
+            this.Seperator_ToolStripStatusLabel.Text = "|";
+            // 
+            // VULevel_ToolStripStatusLabel
+            // 
+            this.VULevel_ToolStripStatusLabel.Name = "VULevel_ToolStripStatusLabel";
+            this.VULevel_ToolStripStatusLabel.Size = new System.Drawing.Size(55, 15);
+            this.VULevel_ToolStripStatusLabel.Text = "VU Level:";
+            // 
+            // VULevelValue_ToolStripStatusLabel
+            // 
+            this.VULevelValue_ToolStripStatusLabel.Name = "VULevelValue_ToolStripStatusLabel";
+            this.VULevelValue_ToolStripStatusLabel.Size = new System.Drawing.Size(29, 15);
+            this.VULevelValue_ToolStripStatusLabel.Text = "N/A";
+            // 
+            // Capture_ToolStripStatusLabel
+            // 
+            this.Capture_ToolStripStatusLabel.Name = "Capture_ToolStripStatusLabel";
+            this.Capture_ToolStripStatusLabel.Size = new System.Drawing.Size(65, 15);
+            this.Capture_ToolStripStatusLabel.Text = "- [Capture]";
+            this.Capture_ToolStripStatusLabel.Click += new System.EventHandler(this.ToolStripStatusLabel6_Click);
+            // 
+            // Version_ToolStripDropDownButton
+            // 
+            this.Version_ToolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Version_ToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Java_ToolStripMenuItem,
+            this.Bedrock_ToolStripMenuItem});
+            this.Version_ToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("Version_ToolStripDropDownButton.Image")));
+            this.Version_ToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Version_ToolStripDropDownButton.Name = "Version_ToolStripDropDownButton";
+            this.Version_ToolStripDropDownButton.Size = new System.Drawing.Size(86, 19);
+            this.Version_ToolStripDropDownButton.Text = "Version: Java";
+            this.Version_ToolStripDropDownButton.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolStripDropDownButton1_DropDownItemClicked);
+            // 
+            // Java_ToolStripMenuItem
+            // 
+            this.Java_ToolStripMenuItem.Name = "Java_ToolStripMenuItem";
+            this.Java_ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.Java_ToolStripMenuItem.Text = "Java";
+            // 
+            // Bedrock_ToolStripMenuItem
+            // 
+            this.Bedrock_ToolStripMenuItem.Name = "Bedrock_ToolStripMenuItem";
+            this.Bedrock_ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.Bedrock_ToolStripMenuItem.Text = "Bedrock";
+            // 
+            // AudioDetectionTimer
+            // 
+            this.AudioDetectionTimer.Interval = 1;
+            this.AudioDetectionTimer.Tick += new System.EventHandler(this.AudioDetectionTimer_Tick);
+            // 
+            // StatusRefreshTimer
+            // 
+            this.StatusRefreshTimer.Enabled = true;
+            this.StatusRefreshTimer.Interval = 1;
+            this.StatusRefreshTimer.Tick += new System.EventHandler(this.StatusRefreshTimer_Tick);
+            // 
+            // AntiAfkTimer
+            // 
+            this.AntiAfkTimer.Interval = 5000;
+            this.AntiAfkTimer.Tick += new System.EventHandler(this.AntiAfkTimer_Tick);
+            // 
+            // RodTimeoutTimer
+            // 
+            this.RodTimeoutTimer.Interval = 120000;
+            this.RodTimeoutTimer.Tick += new System.EventHandler(this.RodTimeoutTimer_Tick);
+            // 
+            // LoadingPleaseWait_Button
+            // 
+            this.LoadingPleaseWait_Button.Enabled = false;
+            this.LoadingPleaseWait_Button.Font = new System.Drawing.Font("Segoe Print", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadingPleaseWait_Button.Location = new System.Drawing.Point(12, 12);
+            this.LoadingPleaseWait_Button.Name = "LoadingPleaseWait_Button";
+            this.LoadingPleaseWait_Button.Size = new System.Drawing.Size(320, 62);
+            this.LoadingPleaseWait_Button.TabIndex = 40;
+            this.LoadingPleaseWait_Button.Text = "Loading... Please Wait.";
+            this.LoadingPleaseWait_Button.UseVisualStyleBackColor = true;
+            this.LoadingPleaseWait_Button.Visible = false;
+            // 
+            // VuCaptureTimeoutTimer
+            // 
+            this.VuCaptureTimeoutTimer.Interval = 60000;
+            this.VuCaptureTimeoutTimer.Tick += new System.EventHandler(this.VuCaptureTimeoutTimer_Tick);
+            // 
+            // VuLevelCaptureTimer
+            // 
+            this.VuLevelCaptureTimer.Interval = 1;
+            this.VuLevelCaptureTimer.Tick += new System.EventHandler(this.VuLevelCaptureTimer_Tick);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 524);
-            this.Controls.Add(this.GroupBox5);
-            this.Controls.Add(this.GroupBox4);
-            this.Controls.Add(this.Button5);
-            this.Controls.Add(this.GroupBox3);
-            this.Controls.Add(this.GroupBox2);
-            this.Controls.Add(this.GroupBox1);
-            this.Controls.Add(this.StatusStrip1);
-            this.Controls.Add(this.Button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ServerOptions_GroupBox);
+            this.Controls.Add(this.CustomWaitValues_GroupBox);
+            this.Controls.Add(this.PressToStartBot_Button);
+            this.Controls.Add(this.FishingOptions_GroupBox);
+            this.Controls.Add(this.SoundVUSensitivity_GroupBox);
+            this.Controls.Add(this.BotStatus_GroupBox);
+            this.Controls.Add(this.Bot_StatusStrip);
+            this.Controls.Add(this.PressToStopBot_Button);
+            this.Controls.Add(this.LoadingPleaseWait_Button);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Main";
+            this.Name = "MainForm";
             this.Text = "Minecraft Auto-Fishing Bot";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.GroupBox5.ResumeLayout(false);
-            this.GroupBox5.PerformLayout();
-            this.GroupBox4.ResumeLayout(false);
-            this.GroupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).EndInit();
-            this.GroupBox3.ResumeLayout(false);
-            this.GroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).EndInit();
-            this.GroupBox2.ResumeLayout(false);
-            this.GroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            this.GroupBox1.ResumeLayout(false);
-            this.GroupBox1.PerformLayout();
-            this.StatusStrip1.ResumeLayout(false);
-            this.StatusStrip1.PerformLayout();
+            this.ServerOptions_GroupBox.ResumeLayout(false);
+            this.ServerOptions_GroupBox.PerformLayout();
+            this.CustomWaitValues_GroupBox.ResumeLayout(false);
+            this.CustomWaitValues_GroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NoiseDelayValue_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LineOutDelayValue_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LineInDelayValue_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StartBotDelay_NumericUpDown)).EndInit();
+            this.FishingOptions_GroupBox.ResumeLayout(false);
+            this.FishingOptions_GroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SwingOffsetValue_NumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomThrowsValue_NumericUpDown)).EndInit();
+            this.SoundVUSensitivity_GroupBox.ResumeLayout(false);
+            this.SoundVUSensitivity_GroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TriggerBotAtValue_NumericUpDown)).EndInit();
+            this.BotStatus_GroupBox.ResumeLayout(false);
+            this.BotStatus_GroupBox.PerformLayout();
+            this.Bot_StatusStrip.ResumeLayout(false);
+            this.Bot_StatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        internal System.Windows.Forms.GroupBox GroupBox5;
-        internal System.Windows.Forms.CheckBox checkBox10;
-        internal System.Windows.Forms.GroupBox GroupBox4;
-        internal System.Windows.Forms.NumericUpDown NumericUpDown5;
-        internal System.Windows.Forms.Label Label15;
-        internal System.Windows.Forms.NumericUpDown NumericUpDown4;
-        internal System.Windows.Forms.Label Label12;
-        internal System.Windows.Forms.NumericUpDown NumericUpDown3;
-        internal System.Windows.Forms.Label Label11;
-        internal System.Windows.Forms.NumericUpDown NumericUpDown2;
-        internal System.Windows.Forms.Label Label10;
-        internal System.Windows.Forms.Button Button4;
-        internal System.Windows.Forms.Button Button5;
-        internal System.Windows.Forms.GroupBox GroupBox3;
-        internal System.Windows.Forms.NumericUpDown NumericUpDown1;
-        internal System.Windows.Forms.GroupBox GroupBox2;
-        internal System.Windows.Forms.GroupBox GroupBox1;
-        internal System.Windows.Forms.Label Label17;
-        internal System.Windows.Forms.Label Label16;
-        internal System.Windows.Forms.Label Label14;
-        internal System.Windows.Forms.Label Label13;
-        internal System.Windows.Forms.Label Label9;
-        internal System.Windows.Forms.Label Label8;
-        internal System.Windows.Forms.Label Label7;
-        internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label Label1;
-        internal System.Windows.Forms.TextBox MyX_MyY;
-        internal System.Windows.Forms.StatusStrip StatusStrip1;
-        internal System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel2;
-        internal System.Windows.Forms.ToolStripStatusLabel ToolStripStatusLabel1;
-        internal System.Windows.Forms.Timer Timer1;
-        internal System.Windows.Forms.Timer Timer2;
-        internal System.Windows.Forms.Timer Timer3;
-        internal System.Windows.Forms.Timer Timer4;
-        internal System.Windows.Forms.Timer Timer5;
-        internal System.Windows.Forms.Timer Timer6;
-        internal System.Windows.Forms.Timer Timer7;
-        private System.Windows.Forms.Timer Tmr;
-        internal System.Windows.Forms.NumericUpDown numericUpDown6;
-        internal System.Windows.Forms.CheckBox checkBox8;
-        internal System.Windows.Forms.CheckBox checkBox7;
-        internal System.Windows.Forms.CheckBox checkBox6;
-        internal System.Windows.Forms.CheckBox checkBox9;
-        internal System.Windows.Forms.CheckBox checkBox11;
-        internal System.Windows.Forms.CheckBox checkBox5;
-        internal System.Windows.Forms.CheckBox checkBox4;
-        internal System.Windows.Forms.CheckBox checkBox3;
-        internal System.Windows.Forms.CheckBox checkBox2;
-        internal System.Windows.Forms.CheckBox checkBox1;
-        internal System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.Timer timer8;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.Timer timer9;
-        private System.Windows.Forms.Timer timer10;
-        internal System.Windows.Forms.CheckBox checkBox12;
-        internal System.Windows.Forms.NumericUpDown numericUpDown7;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem bedrockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem javaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
+        internal System.Windows.Forms.GroupBox ServerOptions_GroupBox;
+        internal System.Windows.Forms.CheckBox AntiAFKProtection_CheckBox;
+        internal System.Windows.Forms.GroupBox CustomWaitValues_GroupBox;
+        internal System.Windows.Forms.NumericUpDown NoiseDelayValue_NumericUpDown;
+        internal System.Windows.Forms.Label NoiseDelay_Label;
+        internal System.Windows.Forms.NumericUpDown LineOutDelayValue_NumericUpDown;
+        internal System.Windows.Forms.Label LineOutDelay_Label;
+        internal System.Windows.Forms.NumericUpDown LineInDelayValue_NumericUpDown;
+        internal System.Windows.Forms.Label LineInDelay_Label;
+        internal System.Windows.Forms.NumericUpDown StartBotDelay_NumericUpDown;
+        internal System.Windows.Forms.Label StartBotDelay_Label;
+        internal System.Windows.Forms.Button PressToStopBot_Button;
+        internal System.Windows.Forms.Button PressToStartBot_Button;
+        internal System.Windows.Forms.GroupBox FishingOptions_GroupBox;
+        internal System.Windows.Forms.NumericUpDown CustomThrowsValue_NumericUpDown;
+        internal System.Windows.Forms.GroupBox SoundVUSensitivity_GroupBox;
+        internal System.Windows.Forms.GroupBox BotStatus_GroupBox;
+        internal System.Windows.Forms.Label CurrentScrollRodValue_Label;
+        internal System.Windows.Forms.Label CurrentScrollRod_Label;
+        internal System.Windows.Forms.Label CurrentRodCastsValue_Label;
+        internal System.Windows.Forms.Label CurrentRodCasts_Label;
+        internal System.Windows.Forms.Label ProcessVersionValue_Label;
+        internal System.Windows.Forms.Label ProcessVersion_Label;
+        internal System.Windows.Forms.Label Resources_Label;
+        internal System.Windows.Forms.Label TotalLinesPulledValue_Label;
+        internal System.Windows.Forms.Label GameProcessesValue_Label;
+        internal System.Windows.Forms.Label TotalLinesPulled_Label;
+        internal System.Windows.Forms.Label GameProcesses_Label;
+        internal System.Windows.Forms.TextBox XY_TextBox;
+        internal System.Windows.Forms.StatusStrip Bot_StatusStrip;
+        internal System.Windows.Forms.ToolStripStatusLabel GameStatus_ToolStripStatusLabel;
+        internal System.Windows.Forms.ToolStripStatusLabel GameStatusValue_ToolStripStatusLabel;
+        internal System.Windows.Forms.Timer AudioDetectionTimer;
+        internal System.Windows.Forms.Timer StatusRefreshTimer;
+        internal System.Windows.Forms.Timer AntiAfkTimer;
+        internal System.Windows.Forms.Timer RodTimeoutTimer;
+        internal System.Windows.Forms.NumericUpDown TriggerBotAtValue_NumericUpDown;
+        internal System.Windows.Forms.CheckBox Debug_CheckBox3;
+        internal System.Windows.Forms.CheckBox Debug_CheckBox2;
+        internal System.Windows.Forms.CheckBox Debug_CheckBox1;
+        internal System.Windows.Forms.CheckBox UnlimitedThrows_CheckBox;
+        internal System.Windows.Forms.CheckBox CloseBotWhenFinished_CheckBox;
+        internal System.Windows.Forms.CheckBox LeaveWhenFinished_CheckBox;
+        internal System.Windows.Forms.CheckBox AutoEjectRod_CheckBox;
+        internal System.Windows.Forms.CheckBox Save1HP_CheckBox;
+        internal System.Windows.Forms.CheckBox UseHotbarScrolling_CheckBox;
+        internal System.Windows.Forms.CheckBox CustomThrows_CheckBox;
+        internal System.Windows.Forms.Button LoadingPleaseWait_Button;
+        private System.Windows.Forms.Label TriggerBotAt_Label;
+        private System.Windows.Forms.ToolStripStatusLabel VULevel_ToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel VULevelValue_ToolStripStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel Capture_ToolStripStatusLabel;
+        private System.Windows.Forms.Timer VuCaptureTimeoutTimer;
+        private System.Windows.Forms.Timer VuLevelCaptureTimer;
+        internal System.Windows.Forms.CheckBox SwingOffset_CheckBox;
+        internal System.Windows.Forms.NumericUpDown SwingOffsetValue_NumericUpDown;
+        private System.Windows.Forms.ToolStripDropDownButton Version_ToolStripDropDownButton;
+        private System.Windows.Forms.ToolStripMenuItem Bedrock_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Java_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel Seperator_ToolStripStatusLabel;
     }
 }
 

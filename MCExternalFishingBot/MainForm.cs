@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using System.Threading;
 using System.Drawing;
 using System.Data;
 using System.Linq;
@@ -17,7 +17,9 @@ namespace MCExternalFishingBot
         #region Constants and State
 
         // Say Hello To Decompilers
+        #pragma warning disable CS0414
         private static readonly string HelloThere = "Hello There Fellow Decompiler, This Program Was Made By Discord:dannyruss.";
+        #pragma warning restore CS0414
 
         private string VersionNumber => GetFileVersionDisplay();
 
@@ -38,7 +40,7 @@ namespace MCExternalFishingBot
 
         private int RodHealth = 1;
 
-        private readonly int SaveHP = 63;
+        // private readonly int SaveHP = 63;
 
         private int TotalLines = 0;
 
@@ -65,7 +67,7 @@ namespace MCExternalFishingBot
 
         public delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
 
-        private readonly int currentProcessID;
+        // private readonly int currentProcessID;
 
         #endregion
 
@@ -264,7 +266,7 @@ namespace MCExternalFishingBot
         {
             _selectedGameVersion = gameVersion;
             CheckGame = 0;
-            toolStripDropDownButton1.Text = "Version: " + gameVersion;
+            Version_ToolStripDropDownButton.Text = "Version: " + gameVersion;
         }
         #endregion
 
@@ -309,7 +311,7 @@ namespace MCExternalFishingBot
         /// <summary>
         /// Polls the selected Minecraft audio session and triggers the fishing macro when a sound spike is detected.
         /// </summary>
-        private void Timer1_Tick(object sender, EventArgs e)
+        private async void AudioDetectionTimer_Tick(object sender, EventArgs e)
         {
 
             // Monitor the selected Minecraft audio session.
@@ -328,7 +330,7 @@ namespace MCExternalFishingBot
                     var Label100String = string.Join(" ", values.Select(v => v.ToString("00%")));
                     string firstTwoChars = Label100String.Length <= 2 ? Label100String : Label100String.Substring(0, 2);
 
-                    string VPInput = numericUpDown6.Text;
+                    string VPInput = TriggerBotAtValue_NumericUpDown.Text;
                     string s1 = firstTwoChars;
                     int s1int = Int32.Parse(s1);
                     int s2int = Int32.Parse(VPInput);
@@ -347,16 +349,16 @@ namespace MCExternalFishingBot
                     {
 
                         //  Sound Spike Was Found, Run Code
-                        Timer1.Stop();
-                        Timer1.Enabled = false;
-                        if (checkBox9.Checked == false)
+                        AudioDetectionTimer.Stop();
+                        AudioDetectionTimer.Enabled = false;
+                        if (UnlimitedThrows_CheckBox.Checked == false)
                         {
                             //  Check If Save 1 HP Is Enabled
-                            if (checkBox3.Checked == true)
+                            if (Save1HP_CheckBox.Checked == true)
                             {
                                 //  1 HP Is Enabled
                                 //  Check If Scrolling Is Enabled
-                                if (checkBox2.Checked == true)
+                                if (UseHotbarScrolling_CheckBox.Checked == true)
                                 {
                                     //  Scrolling Enabled
                                     //  Not Normal (SAVE 1 HP)
@@ -365,15 +367,15 @@ namespace MCExternalFishingBot
                                     {
                                         //  Finished Last Scroll
                                         //  Check To Close APP
-                                        if (RodHealth == (NumericUpDown1.Value - 1))
+                                        if (RodHealth == (CustomThrowsValue_NumericUpDown.Value - 1))
                                         {
-                                            if (checkBox5.Checked == true)
+                                            if (LeaveWhenFinished_CheckBox.Checked == true)
                                             {
                                                 //  Pull In Line Before Throw
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(8, 0, 0, 0, 1);
                                                 //  RIGHTDOWN
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(16, 0, 0, 0, 1);
                                                 //  RIGHTUP
                                                 //  Terminate the selected Minecraft process
@@ -381,79 +383,79 @@ namespace MCExternalFishingBot
 
                                                 //  STOP BOT
                                                 //  Stop Time-Out
-                                                Timer7.Stop();
-                                                Timer7.Enabled = false;
+                                                RodTimeoutTimer.Stop();
+                                                RodTimeoutTimer.Enabled = false;
                                                 TotalLines++;
                                                 //  Enable
-                                                if (checkBox11.Checked == true)
+                                                if (CloseBotWhenFinished_CheckBox.Checked == true)
                                                 {
                                                     Close();
                                                 }
 
                                                 //  Stop Timmer
-                                                Timer5.Stop();
-                                                Timer5.Enabled = false;
-                                                GroupBox1.Enabled = false;
-                                                GroupBox2.Enabled = false;
-                                                GroupBox3.Enabled = false;
-                                                GroupBox4.Enabled = false;
-                                                GroupBox5.Enabled = false;
-                                                checkBox9.Checked = false;
-                                                checkBox10.Checked = false;
-                                                checkBox11.Checked = false;
-                                                Button4.Visible = false;
-                                                Button4.Text = "Press To Stop Bot";
-                                                Button5.Text = "Press To Start Bot";
-                                                Button5.Visible = true;
-                                                checkBox1.Checked = false;
-                                                checkBox2.Checked = false;
-                                                checkBox3.Checked = false;
-                                                checkBox4.Checked = false;
-                                                checkBox5.Checked = false;
-                                                checkBox6.Checked = false;
+                                                AntiAfkTimer.Stop();
+                                                AntiAfkTimer.Enabled = false;
+                                                BotStatus_GroupBox.Enabled = false;
+                                                SoundVUSensitivity_GroupBox.Enabled = false;
+                                                FishingOptions_GroupBox.Enabled = false;
+                                                CustomWaitValues_GroupBox.Enabled = false;
+                                                ServerOptions_GroupBox.Enabled = false;
+                                                UnlimitedThrows_CheckBox.Checked = false;
+                                                AntiAFKProtection_CheckBox.Checked = false;
+                                                CloseBotWhenFinished_CheckBox.Checked = false;
+                                                PressToStopBot_Button.Visible = false;
+                                                PressToStopBot_Button.Text = "Press To Stop Bot";
+                                                PressToStartBot_Button.Text = "Press To Start Bot";
+                                                PressToStartBot_Button.Visible = true;
+                                                CustomThrows_CheckBox.Checked = false;
+                                                UseHotbarScrolling_CheckBox.Checked = false;
+                                                Save1HP_CheckBox.Checked = false;
+                                                AutoEjectRod_CheckBox.Checked = false;
+                                                LeaveWhenFinished_CheckBox.Checked = false;
+                                                Debug_CheckBox1.Checked = false;
                                                 MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             }
                                             else
                                             {
                                                 //  Pull In Line Before Throw
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(8, 0, 0, 0, 1);
                                                 //  RIGHTDOWN
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(16, 0, 0, 0, 1);
                                                 //  RIGHTUP
                                                 //  STOP BOT
                                                 //  Stop Time-Out
-                                                Timer7.Stop();
-                                                Timer7.Enabled = false;
+                                                RodTimeoutTimer.Stop();
+                                                RodTimeoutTimer.Enabled = false;
                                                 TotalLines++;
                                                 //  Enable
-                                                if (checkBox11.Checked == true)
+                                                if (CloseBotWhenFinished_CheckBox.Checked == true)
                                                 {
                                                     Close();
                                                 }
 
                                                 //  Stop Timmer
-                                                Timer5.Stop();
-                                                Timer5.Enabled = false;
-                                                GroupBox1.Enabled = false;
-                                                GroupBox2.Enabled = false;
-                                                GroupBox3.Enabled = false;
-                                                GroupBox4.Enabled = false;
-                                                GroupBox5.Enabled = false;
-                                                checkBox9.Checked = false;
-                                                checkBox10.Checked = false;
-                                                checkBox11.Checked = false;
-                                                Button4.Visible = false;
-                                                Button4.Text = "Press To Stop Bot";
-                                                Button5.Text = "Press To Start Bot";
-                                                Button5.Visible = true;
-                                                checkBox1.Checked = false;
-                                                checkBox2.Checked = false;
-                                                checkBox3.Checked = false;
-                                                checkBox4.Checked = false;
-                                                checkBox5.Checked = false;
-                                                checkBox6.Checked = false;
+                                                AntiAfkTimer.Stop();
+                                                AntiAfkTimer.Enabled = false;
+                                                BotStatus_GroupBox.Enabled = false;
+                                                SoundVUSensitivity_GroupBox.Enabled = false;
+                                                FishingOptions_GroupBox.Enabled = false;
+                                                CustomWaitValues_GroupBox.Enabled = false;
+                                                ServerOptions_GroupBox.Enabled = false;
+                                                UnlimitedThrows_CheckBox.Checked = false;
+                                                AntiAFKProtection_CheckBox.Checked = false;
+                                                CloseBotWhenFinished_CheckBox.Checked = false;
+                                                PressToStopBot_Button.Visible = false;
+                                                PressToStopBot_Button.Text = "Press To Stop Bot";
+                                                PressToStartBot_Button.Text = "Press To Start Bot";
+                                                PressToStartBot_Button.Visible = true;
+                                                CustomThrows_CheckBox.Checked = false;
+                                                UseHotbarScrolling_CheckBox.Checked = false;
+                                                Save1HP_CheckBox.Checked = false;
+                                                AutoEjectRod_CheckBox.Checked = false;
+                                                LeaveWhenFinished_CheckBox.Checked = false;
+                                                Debug_CheckBox1.Checked = false;
                                                 MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             }
 
@@ -461,24 +463,24 @@ namespace MCExternalFishingBot
                                         else
                                         {
                                             //  Run Macros
-                                            this.RedirrectYes();
+                                            await this.RedirrectYes();
                                         }
 
                                     }
                                     else
                                     {
                                         //  Check if its the last scroll
-                                        if (RodHealth == (NumericUpDown1.Value - 1))
+                                        if (RodHealth == (CustomThrowsValue_NumericUpDown.Value - 1))
                                         {
                                             //  MAX HP
                                             DummyScroll = 1;
                                             //  Scroll To Next Rod
                                             //  Check To Eject First
                                             //  Pull In Line Before Throw
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(8, 0, 0, 0, 1);
                                             //  RIGHTDOWN
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(16, 0, 0, 0, 1);
                                             //  RIGHTUP
                                             //  Scroll Hotbar
@@ -487,12 +489,12 @@ namespace MCExternalFishingBot
                                             RodHealth = 0;
                                             ScrollReject++;
                                             //  Run Macros
-                                            this.RedirrectYes();
+                                            await this.RedirrectYes();
                                         }
                                         else
                                         {
                                             //  Run Macros
-                                            this.RedirrectYes();
+                                            await this.RedirrectYes();
                                         }
 
                                     }
@@ -502,17 +504,17 @@ namespace MCExternalFishingBot
                                 {
                                     //  Scroll Not Enabled
                                     //  Check if its the last throw
-                                    if (RodHealth == (NumericUpDown1.Value - 1))
+                                    if (RodHealth == (CustomThrowsValue_NumericUpDown.Value - 1))
                                     {
                                         // Finished Last Scroll
                                         //  Check To Close APP
-                                        if (checkBox5.Checked == true)
+                                        if (LeaveWhenFinished_CheckBox.Checked == true)
                                         {
                                             //  Pull In Line Before Throw
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(8, 0, 0, 0, 1);
                                             //  RIGHTDOWN
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(16, 0, 0, 0, 1);
                                             //  RIGHTUP
                                             //  Terminate the selected Minecraft process
@@ -520,79 +522,79 @@ namespace MCExternalFishingBot
 
                                             //  STOP BOT
                                             //  Stop Time-Out
-                                            Timer7.Stop();
-                                            Timer7.Enabled = false;
+                                            RodTimeoutTimer.Stop();
+                                            RodTimeoutTimer.Enabled = false;
                                             TotalLines++;
                                             //  Enable
-                                            if (checkBox11.Checked == true)
+                                            if (CloseBotWhenFinished_CheckBox.Checked == true)
                                             {
                                                 Close();
                                             }
 
                                             //  Stop Timmer
-                                            Timer5.Stop();
-                                            Timer5.Enabled = false;
-                                            GroupBox1.Enabled = false;
-                                            GroupBox2.Enabled = false;
-                                            GroupBox3.Enabled = false;
-                                            GroupBox4.Enabled = false;
-                                            GroupBox5.Enabled = false;
-                                            checkBox9.Checked = false;
-                                            checkBox10.Checked = false;
-                                            checkBox11.Checked = false;
-                                            Button4.Visible = false;
-                                            Button4.Text = "Press To Stop Bot";
-                                            Button5.Text = "Press To Start Bot";
-                                            Button5.Visible = true;
-                                            checkBox1.Checked = false;
-                                            checkBox2.Checked = false;
-                                            checkBox3.Checked = false;
-                                            checkBox4.Checked = false;
-                                            checkBox5.Checked = false;
-                                            checkBox6.Checked = false;
+                                            AntiAfkTimer.Stop();
+                                            AntiAfkTimer.Enabled = false;
+                                            BotStatus_GroupBox.Enabled = false;
+                                            SoundVUSensitivity_GroupBox.Enabled = false;
+                                            FishingOptions_GroupBox.Enabled = false;
+                                            CustomWaitValues_GroupBox.Enabled = false;
+                                            ServerOptions_GroupBox.Enabled = false;
+                                            UnlimitedThrows_CheckBox.Checked = false;
+                                            AntiAFKProtection_CheckBox.Checked = false;
+                                            CloseBotWhenFinished_CheckBox.Checked = false;
+                                            PressToStopBot_Button.Visible = false;
+                                            PressToStopBot_Button.Text = "Press To Stop Bot";
+                                            PressToStartBot_Button.Text = "Press To Start Bot";
+                                            PressToStartBot_Button.Visible = true;
+                                            CustomThrows_CheckBox.Checked = false;
+                                            UseHotbarScrolling_CheckBox.Checked = false;
+                                            Save1HP_CheckBox.Checked = false;
+                                            AutoEjectRod_CheckBox.Checked = false;
+                                            LeaveWhenFinished_CheckBox.Checked = false;
+                                            Debug_CheckBox1.Checked = false;
                                             MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                         else
                                         {
                                             //  Pull In Line Before Throw
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(8, 0, 0, 0, 1);
                                             //  RIGHTDOWN
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(16, 0, 0, 0, 1);
                                             //  RIGHTUP
                                             //  STOP BOT
                                             //  Stop Time-Out
-                                            Timer7.Stop();
-                                            Timer7.Enabled = false;
+                                            RodTimeoutTimer.Stop();
+                                            RodTimeoutTimer.Enabled = false;
                                             TotalLines++;
                                             //  Enable
-                                            if (checkBox11.Checked == true)
+                                            if (CloseBotWhenFinished_CheckBox.Checked == true)
                                             {
                                                 Close();
                                             }
 
                                             //  Stop Timmer
-                                            Timer5.Stop();
-                                            Timer5.Enabled = false;
-                                            GroupBox1.Enabled = false;
-                                            GroupBox2.Enabled = false;
-                                            GroupBox3.Enabled = false;
-                                            GroupBox4.Enabled = false;
-                                            GroupBox5.Enabled = false;
-                                            checkBox9.Checked = false;
-                                            checkBox10.Checked = false;
-                                            checkBox11.Checked = false;
-                                            Button4.Visible = false;
-                                            Button4.Text = "Press To Stop Bot";
-                                            Button5.Text = "Press To Start Bot";
-                                            Button5.Visible = true;
-                                            checkBox1.Checked = false;
-                                            checkBox2.Checked = false;
-                                            checkBox3.Checked = false;
-                                            checkBox4.Checked = false;
-                                            checkBox5.Checked = false;
-                                            checkBox6.Checked = false;
+                                            AntiAfkTimer.Stop();
+                                            AntiAfkTimer.Enabled = false;
+                                            BotStatus_GroupBox.Enabled = false;
+                                            SoundVUSensitivity_GroupBox.Enabled = false;
+                                            FishingOptions_GroupBox.Enabled = false;
+                                            CustomWaitValues_GroupBox.Enabled = false;
+                                            ServerOptions_GroupBox.Enabled = false;
+                                            UnlimitedThrows_CheckBox.Checked = false;
+                                            AntiAFKProtection_CheckBox.Checked = false;
+                                            CloseBotWhenFinished_CheckBox.Checked = false;
+                                            PressToStopBot_Button.Visible = false;
+                                            PressToStopBot_Button.Text = "Press To Stop Bot";
+                                            PressToStartBot_Button.Text = "Press To Start Bot";
+                                            PressToStartBot_Button.Visible = true;
+                                            CustomThrows_CheckBox.Checked = false;
+                                            UseHotbarScrolling_CheckBox.Checked = false;
+                                            Save1HP_CheckBox.Checked = false;
+                                            AutoEjectRod_CheckBox.Checked = false;
+                                            LeaveWhenFinished_CheckBox.Checked = false;
+                                            Debug_CheckBox1.Checked = false;
                                             MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
 
@@ -600,7 +602,7 @@ namespace MCExternalFishingBot
                                     else
                                     {
                                         //  Run Macros
-                                        this.RedirrectYes();
+                                        await this.RedirrectYes();
                                     }
 
                                 }
@@ -610,12 +612,12 @@ namespace MCExternalFishingBot
                             {
                                 //  1 HP Disabled
                                 //  Check If Scrolling Is Enabled
-                                if (checkBox2.Checked == true)
+                                if (UseHotbarScrolling_CheckBox.Checked == true)
                                 {
                                     //  Scrolling Enabled
                                     //  Not Normal (SAVE 1 HP)
                                     //  Check If Scroll Is Needed
-                                    if (RodHealth == NumericUpDown1.Value)
+                                    if (RodHealth == CustomThrowsValue_NumericUpDown.Value)
                                     {
                                         //  MAX HP
                                         DummyScroll = 1;
@@ -624,33 +626,33 @@ namespace MCExternalFishingBot
                                         {
                                             //  Finished Last Scroll
                                             //  Check To Close APP
-                                            if (checkBox5.Checked == true)
+                                            if (LeaveWhenFinished_CheckBox.Checked == true)
                                             {
                                                 //  Check To Eject First
-                                                if (checkBox4.Checked == true)
+                                                if (AutoEjectRod_CheckBox.Checked == true)
                                                 {
                                                     //  Pull In Line Before Throw
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(8, 0, 0, 0, 1);
                                                     //  RIGHTDOWN
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(16, 0, 0, 0, 1);
                                                     //  RIGHTUP
                                                     //  Press Middle Mouse Button
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(32, 0, 0, 0, 1);
                                                     //  MIDDLEDOWN
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(64, 0, 0, 0, 1);
                                                     //  MIDDLEUP
                                                 }
                                                 else
                                                 {
                                                     //  Pull In Line Before Throw
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(8, 0, 0, 0, 1);
                                                     //  RIGHTDOWN
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(16, 0, 0, 0, 1);
                                                     //  RIGHTUP
                                                 }
@@ -660,101 +662,101 @@ namespace MCExternalFishingBot
 
                                                 //  STOP BOT
                                                 //  Stop Time-Out
-                                                Timer7.Stop();
-                                                Timer7.Enabled = false;
+                                                RodTimeoutTimer.Stop();
+                                                RodTimeoutTimer.Enabled = false;
                                                 TotalLines++;
                                                 //  Enable
-                                                if (checkBox11.Checked == true)
+                                                if (CloseBotWhenFinished_CheckBox.Checked == true)
                                                 {
                                                     Close();
                                                 }
 
                                                 //  Stop Timmer
-                                                Timer5.Stop();
-                                                Timer5.Enabled = false;
-                                                GroupBox1.Enabled = false;
-                                                GroupBox2.Enabled = false;
-                                                GroupBox3.Enabled = false;
-                                                GroupBox4.Enabled = false;
-                                                GroupBox5.Enabled = false;
-                                                checkBox9.Checked = false;
-                                                checkBox10.Checked = false;
-                                                checkBox11.Checked = false;
-                                                Button4.Visible = false;
-                                                Button4.Text = "Press To Stop Bot";
-                                                Button5.Text = "Press To Start Bot";
-                                                Button5.Visible = true;
-                                                checkBox1.Checked = false;
-                                                checkBox2.Checked = false;
-                                                checkBox3.Checked = false;
-                                                checkBox4.Checked = false;
-                                                checkBox5.Checked = false;
-                                                checkBox6.Checked = false;
+                                                AntiAfkTimer.Stop();
+                                                AntiAfkTimer.Enabled = false;
+                                                BotStatus_GroupBox.Enabled = false;
+                                                SoundVUSensitivity_GroupBox.Enabled = false;
+                                                FishingOptions_GroupBox.Enabled = false;
+                                                CustomWaitValues_GroupBox.Enabled = false;
+                                                ServerOptions_GroupBox.Enabled = false;
+                                                UnlimitedThrows_CheckBox.Checked = false;
+                                                AntiAFKProtection_CheckBox.Checked = false;
+                                                CloseBotWhenFinished_CheckBox.Checked = false;
+                                                PressToStopBot_Button.Visible = false;
+                                                PressToStopBot_Button.Text = "Press To Stop Bot";
+                                                PressToStartBot_Button.Text = "Press To Start Bot";
+                                                PressToStartBot_Button.Visible = true;
+                                                CustomThrows_CheckBox.Checked = false;
+                                                UseHotbarScrolling_CheckBox.Checked = false;
+                                                Save1HP_CheckBox.Checked = false;
+                                                AutoEjectRod_CheckBox.Checked = false;
+                                                LeaveWhenFinished_CheckBox.Checked = false;
+                                                Debug_CheckBox1.Checked = false;
                                                 MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             }
                                             else
                                             {
                                                 //  Check To Eject First
-                                                if (checkBox4.Checked == true)
+                                                if (AutoEjectRod_CheckBox.Checked == true)
                                                 {
                                                     //  Pull In Line Before Throw
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(8, 0, 0, 0, 1);
                                                     //  RIGHTDOWN
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(16, 0, 0, 0, 1);
                                                     //  RIGHTUP
                                                     //  Press Middle Mouse Button
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(32, 0, 0, 0, 1);
                                                     //  MIDDLEDOWN
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(64, 0, 0, 0, 1);
                                                     //  MIDDLEUP
                                                 }
                                                 else
                                                 {
                                                     //  Pull In Line Before Throw
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(8, 0, 0, 0, 1);
                                                     //  RIGHTDOWN
-                                                    Thread.Sleep(100);
+                                                    await Task.Delay(100);
                                                     MainForm.mouse_event(16, 0, 0, 0, 1);
                                                     //  RIGHTUP
                                                 }
 
                                                 //  STOP BOT
                                                 //  Stop Time-Out
-                                                Timer7.Stop();
-                                                Timer7.Enabled = false;
+                                                RodTimeoutTimer.Stop();
+                                                RodTimeoutTimer.Enabled = false;
                                                 TotalLines++;
                                                 //  Enable
-                                                if (checkBox11.Checked == true)
+                                                if (CloseBotWhenFinished_CheckBox.Checked == true)
                                                 {
                                                     Close();
                                                 }
 
                                                 //  Stop Timmer
-                                                Timer5.Stop();
-                                                Timer5.Enabled = false;
-                                                GroupBox1.Enabled = false;
-                                                GroupBox2.Enabled = false;
-                                                GroupBox3.Enabled = false;
-                                                GroupBox4.Enabled = false;
-                                                GroupBox5.Enabled = false;
-                                                checkBox9.Checked = false;
-                                                checkBox10.Checked = false;
-                                                checkBox11.Checked = false;
-                                                Button4.Visible = false;
-                                                Button4.Text = "Press To Stop Bot";
-                                                Button5.Text = "Press To Start Bot";
-                                                Button5.Visible = true;
-                                                checkBox1.Checked = false;
-                                                checkBox2.Checked = false;
-                                                checkBox3.Checked = false;
-                                                checkBox4.Checked = false;
-                                                checkBox5.Checked = false;
-                                                checkBox6.Checked = false;
+                                                AntiAfkTimer.Stop();
+                                                AntiAfkTimer.Enabled = false;
+                                                BotStatus_GroupBox.Enabled = false;
+                                                SoundVUSensitivity_GroupBox.Enabled = false;
+                                                FishingOptions_GroupBox.Enabled = false;
+                                                CustomWaitValues_GroupBox.Enabled = false;
+                                                ServerOptions_GroupBox.Enabled = false;
+                                                UnlimitedThrows_CheckBox.Checked = false;
+                                                AntiAFKProtection_CheckBox.Checked = false;
+                                                CloseBotWhenFinished_CheckBox.Checked = false;
+                                                PressToStopBot_Button.Visible = false;
+                                                PressToStopBot_Button.Text = "Press To Stop Bot";
+                                                PressToStartBot_Button.Text = "Press To Start Bot";
+                                                PressToStartBot_Button.Visible = true;
+                                                CustomThrows_CheckBox.Checked = false;
+                                                UseHotbarScrolling_CheckBox.Checked = false;
+                                                Save1HP_CheckBox.Checked = false;
+                                                AutoEjectRod_CheckBox.Checked = false;
+                                                LeaveWhenFinished_CheckBox.Checked = false;
+                                                Debug_CheckBox1.Checked = false;
                                                 MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             }
 
@@ -763,30 +765,30 @@ namespace MCExternalFishingBot
                                         {
                                             //  Scroll To Next Rod
                                             //  Check To Eject First
-                                            if (checkBox4.Checked == true)
+                                            if (AutoEjectRod_CheckBox.Checked == true)
                                             {
                                                 //  Pull In Line Before Throw
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(8, 0, 0, 0, 1);
                                                 //  RIGHTDOWN
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(16, 0, 0, 0, 1);
                                                 //  RIGHTUP
                                                 //  Press Middle Mouse Button
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(32, 0, 0, 0, 1);
                                                 //  MIDDLEDOWN
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(64, 0, 0, 0, 1);
                                                 //  MIDDLEUP
                                             }
                                             else
                                             {
                                                 //  Pull In Line Before Throw
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(8, 0, 0, 0, 1);
                                                 //  RIGHTDOWN
-                                                Thread.Sleep(100);
+                                                await Task.Delay(100);
                                                 MainForm.mouse_event(16, 0, 0, 0, 1);
                                                 //  RIGHTUP
                                             }
@@ -797,14 +799,14 @@ namespace MCExternalFishingBot
                                             RodHealth = 0;
                                             ScrollReject++;
                                             //  Run Macros
-                                            this.RedirrectYes();
+                                            await this.RedirrectYes();
                                         }
 
                                     }
                                     else
                                     {
                                         //  Run Macros
-                                        this.RedirrectYes();
+                                        await this.RedirrectYes();
                                     }
 
                                 }
@@ -813,112 +815,112 @@ namespace MCExternalFishingBot
                                     //  Scrolling Not Enabled
                                     //  Normal (NOT SAVE 1 HP)
                                     //  Check If Max HP Was Found
-                                    if (RodHealth == NumericUpDown1.Value)
+                                    if (RodHealth == CustomThrowsValue_NumericUpDown.Value)
                                     {
                                         //  MAX HP FOUND
                                         //  Eject Item If Needed
-                                        if (checkBox4.Checked == true)
+                                        if (AutoEjectRod_CheckBox.Checked == true)
                                         {
                                             //  Pull In Line Before Throw
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(8, 0, 0, 0, 1);
                                             //  RIGHTDOWN
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(16, 0, 0, 0, 1);
                                             //  RIGHTUP
                                             //  Press Middle Mouse Button
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(32, 0, 0, 0, 1);
                                             //  MIDDLEDOWN
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(64, 0, 0, 0, 1);
                                             //  MIDDLEUP
                                         }
                                         else
                                         {
                                             //  Pull In Line Before Throw
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(8, 0, 0, 0, 1);
                                             //  RIGHTDOWN
-                                            Thread.Sleep(100);
+                                            await Task.Delay(100);
                                             MainForm.mouse_event(16, 0, 0, 0, 1);
                                             //  RIGHTUP
                                         }
 
                                         //  Check To Close APP
-                                        if (checkBox5.Checked == true)
+                                        if (LeaveWhenFinished_CheckBox.Checked == true)
                                         {
                                             //  Terminate the selected Minecraft process
                                             KillMinecraftProcesses();
 
                                             //  STOP BOT
                                             //  Stop Time-Out
-                                            Timer7.Stop();
-                                            Timer7.Enabled = false;
+                                            RodTimeoutTimer.Stop();
+                                            RodTimeoutTimer.Enabled = false;
                                             TotalLines++;
                                             //  Enable
-                                            if (checkBox11.Checked == true)
+                                            if (CloseBotWhenFinished_CheckBox.Checked == true)
                                             {
                                                 Close();
                                             }
 
                                             //  Stop Timmer
-                                            Timer5.Stop();
-                                            Timer5.Enabled = false;
-                                            GroupBox1.Enabled = false;
-                                            GroupBox2.Enabled = false;
-                                            GroupBox3.Enabled = false;
-                                            GroupBox4.Enabled = false;
-                                            GroupBox5.Enabled = false;
-                                            checkBox9.Checked = false;
-                                            checkBox10.Checked = false;
-                                            checkBox11.Checked = false;
-                                            Button4.Visible = false;
-                                            Button4.Text = "Press To Stop Bot";
-                                            Button5.Text = "Press To Start Bot";
-                                            Button5.Visible = true;
-                                            checkBox1.Checked = false;
-                                            checkBox2.Checked = false;
-                                            checkBox3.Checked = false;
-                                            checkBox4.Checked = false;
-                                            checkBox5.Checked = false;
-                                            checkBox6.Checked = false;
+                                            AntiAfkTimer.Stop();
+                                            AntiAfkTimer.Enabled = false;
+                                            BotStatus_GroupBox.Enabled = false;
+                                            SoundVUSensitivity_GroupBox.Enabled = false;
+                                            FishingOptions_GroupBox.Enabled = false;
+                                            CustomWaitValues_GroupBox.Enabled = false;
+                                            ServerOptions_GroupBox.Enabled = false;
+                                            UnlimitedThrows_CheckBox.Checked = false;
+                                            AntiAFKProtection_CheckBox.Checked = false;
+                                            CloseBotWhenFinished_CheckBox.Checked = false;
+                                            PressToStopBot_Button.Visible = false;
+                                            PressToStopBot_Button.Text = "Press To Stop Bot";
+                                            PressToStartBot_Button.Text = "Press To Start Bot";
+                                            PressToStartBot_Button.Visible = true;
+                                            CustomThrows_CheckBox.Checked = false;
+                                            UseHotbarScrolling_CheckBox.Checked = false;
+                                            Save1HP_CheckBox.Checked = false;
+                                            AutoEjectRod_CheckBox.Checked = false;
+                                            LeaveWhenFinished_CheckBox.Checked = false;
+                                            Debug_CheckBox1.Checked = false;
                                             MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                         else
                                         {
                                             //  STOP BOT
                                             //  Stop Time-Out
-                                            Timer7.Stop();
-                                            Timer7.Enabled = false;
+                                            RodTimeoutTimer.Stop();
+                                            RodTimeoutTimer.Enabled = false;
                                             TotalLines++;
                                             //  Enable
-                                            if (checkBox11.Checked == true)
+                                            if (CloseBotWhenFinished_CheckBox.Checked == true)
                                             {
                                                 Close();
                                             }
 
                                             //  Stop Timmer
-                                            Timer5.Stop();
-                                            Timer5.Enabled = false;
-                                            GroupBox1.Enabled = false;
-                                            GroupBox2.Enabled = false;
-                                            GroupBox3.Enabled = false;
-                                            GroupBox4.Enabled = false;
-                                            GroupBox5.Enabled = false;
-                                            checkBox9.Checked = false;
-                                            checkBox10.Checked = false;
-                                            checkBox11.Checked = false;
-                                            Button4.Visible = false;
-                                            Button4.Text = "Press To Stop Bot";
-                                            Button5.Text = "Press To Start Bot";
-                                            Button5.Visible = true;
-                                            checkBox1.Checked = false;
-                                            checkBox2.Checked = false;
-                                            checkBox3.Checked = false;
-                                            checkBox4.Checked = false;
-                                            checkBox5.Checked = false;
-                                            checkBox6.Checked = false;
+                                            AntiAfkTimer.Stop();
+                                            AntiAfkTimer.Enabled = false;
+                                            BotStatus_GroupBox.Enabled = false;
+                                            SoundVUSensitivity_GroupBox.Enabled = false;
+                                            FishingOptions_GroupBox.Enabled = false;
+                                            CustomWaitValues_GroupBox.Enabled = false;
+                                            ServerOptions_GroupBox.Enabled = false;
+                                            UnlimitedThrows_CheckBox.Checked = false;
+                                            AntiAFKProtection_CheckBox.Checked = false;
+                                            CloseBotWhenFinished_CheckBox.Checked = false;
+                                            PressToStopBot_Button.Visible = false;
+                                            PressToStopBot_Button.Text = "Press To Stop Bot";
+                                            PressToStartBot_Button.Text = "Press To Start Bot";
+                                            PressToStartBot_Button.Visible = true;
+                                            CustomThrows_CheckBox.Checked = false;
+                                            UseHotbarScrolling_CheckBox.Checked = false;
+                                            Save1HP_CheckBox.Checked = false;
+                                            AutoEjectRod_CheckBox.Checked = false;
+                                            LeaveWhenFinished_CheckBox.Checked = false;
+                                            Debug_CheckBox1.Checked = false;
                                             MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
 
@@ -926,7 +928,7 @@ namespace MCExternalFishingBot
                                     else
                                     {
                                         //  Run Macros
-                                        this.RedirrectYes();
+                                        await this.RedirrectYes();
                                     }
 
                                 }
@@ -937,95 +939,95 @@ namespace MCExternalFishingBot
                         else
                         {
                             //  Unlimited Throws Enabled
-                            if (checkBox6.Checked == false)
+                            if (Debug_CheckBox1.Checked == false)
                             {
                                 //  Run Macros
-                                this.RedirrectYes();
+                                await this.RedirrectYes();
                             }
                             else
                             {
                                 //  Stop Bot 
                                 //  Pull In Line Before Throw
-                                Thread.Sleep(100);
+                                await Task.Delay(100);
                                 MainForm.mouse_event(8, 0, 0, 0, 1);
                                 //  RIGHTDOWN
-                                Thread.Sleep(100);
+                                await Task.Delay(100);
                                 MainForm.mouse_event(16, 0, 0, 0, 1);
                                 //  RIGHTUP
                                 //  Check To Close APP
-                                if (checkBox5.Checked == true)
+                                if (LeaveWhenFinished_CheckBox.Checked == true)
                                 {
                                     //  Terminate the selected Minecraft process
                                     KillMinecraftProcesses();
 
                                     //  STOP BOT
                                     //  Stop Time-Out
-                                    Timer7.Stop();
-                                    Timer7.Enabled = false;
+                                    RodTimeoutTimer.Stop();
+                                    RodTimeoutTimer.Enabled = false;
                                     TotalLines++;
                                     //  Enable
-                                    if (checkBox11.Checked == true)
+                                    if (CloseBotWhenFinished_CheckBox.Checked == true)
                                     {
                                         Close();
                                     }
 
                                     //  Stop Timmer
-                                    Timer5.Stop();
-                                    Timer5.Enabled = false;
-                                    GroupBox1.Enabled = false;
-                                    GroupBox2.Enabled = false;
-                                    GroupBox3.Enabled = false;
-                                    GroupBox4.Enabled = false;
-                                    GroupBox5.Enabled = false;
-                                    checkBox9.Checked = false;
-                                    checkBox10.Checked = false;
-                                    checkBox11.Checked = false;
-                                    Button4.Visible = false;
-                                    Button4.Text = "Press To Stop Bot";
-                                    Button5.Text = "Press To Start Bot";
-                                    Button5.Visible = true;
-                                    checkBox1.Checked = false;
-                                    checkBox2.Checked = false;
-                                    checkBox3.Checked = false;
-                                    checkBox4.Checked = false;
-                                    checkBox5.Checked = false;
-                                    checkBox6.Checked = false;
+                                    AntiAfkTimer.Stop();
+                                    AntiAfkTimer.Enabled = false;
+                                    BotStatus_GroupBox.Enabled = false;
+                                    SoundVUSensitivity_GroupBox.Enabled = false;
+                                    FishingOptions_GroupBox.Enabled = false;
+                                    CustomWaitValues_GroupBox.Enabled = false;
+                                    ServerOptions_GroupBox.Enabled = false;
+                                    UnlimitedThrows_CheckBox.Checked = false;
+                                    AntiAFKProtection_CheckBox.Checked = false;
+                                    CloseBotWhenFinished_CheckBox.Checked = false;
+                                    PressToStopBot_Button.Visible = false;
+                                    PressToStopBot_Button.Text = "Press To Stop Bot";
+                                    PressToStartBot_Button.Text = "Press To Start Bot";
+                                    PressToStartBot_Button.Visible = true;
+                                    CustomThrows_CheckBox.Checked = false;
+                                    UseHotbarScrolling_CheckBox.Checked = false;
+                                    Save1HP_CheckBox.Checked = false;
+                                    AutoEjectRod_CheckBox.Checked = false;
+                                    LeaveWhenFinished_CheckBox.Checked = false;
+                                    Debug_CheckBox1.Checked = false;
                                     MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 else
                                 {
                                     //  STOP BOT
                                     //  Stop Time-Out
-                                    Timer7.Stop();
-                                    Timer7.Enabled = false;
+                                    RodTimeoutTimer.Stop();
+                                    RodTimeoutTimer.Enabled = false;
                                     TotalLines++;
                                     //  Enable
-                                    if (checkBox11.Checked == true)
+                                    if (CloseBotWhenFinished_CheckBox.Checked == true)
                                     {
                                         Close();
                                     }
 
                                     //  Stop Timmer
-                                    Timer5.Stop();
-                                    Timer5.Enabled = false;
-                                    GroupBox1.Enabled = false;
-                                    GroupBox2.Enabled = false;
-                                    GroupBox3.Enabled = false;
-                                    GroupBox4.Enabled = false;
-                                    GroupBox5.Enabled = false;
-                                    checkBox9.Checked = false;
-                                    checkBox10.Checked = false;
-                                    checkBox11.Checked = false;
-                                    Button4.Visible = false;
-                                    Button4.Text = "Press To Stop Bot";
-                                    Button5.Text = "Press To Start Bot";
-                                    Button5.Visible = true;
-                                    checkBox1.Checked = false;
-                                    checkBox2.Checked = false;
-                                    checkBox3.Checked = false;
-                                    checkBox4.Checked = false;
-                                    checkBox5.Checked = false;
-                                    checkBox6.Checked = false;
+                                    AntiAfkTimer.Stop();
+                                    AntiAfkTimer.Enabled = false;
+                                    BotStatus_GroupBox.Enabled = false;
+                                    SoundVUSensitivity_GroupBox.Enabled = false;
+                                    FishingOptions_GroupBox.Enabled = false;
+                                    CustomWaitValues_GroupBox.Enabled = false;
+                                    ServerOptions_GroupBox.Enabled = false;
+                                    UnlimitedThrows_CheckBox.Checked = false;
+                                    AntiAFKProtection_CheckBox.Checked = false;
+                                    CloseBotWhenFinished_CheckBox.Checked = false;
+                                    PressToStopBot_Button.Visible = false;
+                                    PressToStopBot_Button.Text = "Press To Stop Bot";
+                                    PressToStartBot_Button.Text = "Press To Start Bot";
+                                    PressToStartBot_Button.Visible = true;
+                                    CustomThrows_CheckBox.Checked = false;
+                                    UseHotbarScrolling_CheckBox.Checked = false;
+                                    Save1HP_CheckBox.Checked = false;
+                                    AutoEjectRod_CheckBox.Checked = false;
+                                    LeaveWhenFinished_CheckBox.Checked = false;
+                                    Debug_CheckBox1.Checked = false;
                                     MessageBox.Show("Bot Has Finished!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
 
@@ -1040,65 +1042,65 @@ namespace MCExternalFishingBot
             }
 
             //  Look For KillSwitch
-            if (checkBox6.Checked == true)
+            if (Debug_CheckBox1.Checked == true)
             {
                 //  Stop Time-Out
-                Timer7.Stop();
-                Timer7.Enabled = false;
-                Timer1.Stop();
-                Timer1.Enabled = false;
-                Timer5.Stop();
-                Timer5.Enabled = false;
-                GroupBox1.Enabled = true;
-                GroupBox2.Enabled = true;
-                GroupBox3.Enabled = true;
-                GroupBox4.Enabled = true;
-                GroupBox5.Enabled = true;
-                checkBox9.Checked = false;
-                checkBox10.Checked = false;
-                checkBox11.Checked = false;
-                Button4.Visible = false;
-                Button4.Text = "Press To Stop Bot";
-                Button5.Text = "Press To Start Bot";
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
+                RodTimeoutTimer.Stop();
+                RodTimeoutTimer.Enabled = false;
+                AudioDetectionTimer.Stop();
+                AudioDetectionTimer.Enabled = false;
+                AntiAfkTimer.Stop();
+                AntiAfkTimer.Enabled = false;
+                BotStatus_GroupBox.Enabled = true;
+                SoundVUSensitivity_GroupBox.Enabled = true;
+                FishingOptions_GroupBox.Enabled = true;
+                CustomWaitValues_GroupBox.Enabled = true;
+                ServerOptions_GroupBox.Enabled = true;
+                UnlimitedThrows_CheckBox.Checked = false;
+                AntiAFKProtection_CheckBox.Checked = false;
+                CloseBotWhenFinished_CheckBox.Checked = false;
+                PressToStopBot_Button.Visible = false;
+                PressToStopBot_Button.Text = "Press To Stop Bot";
+                PressToStartBot_Button.Text = "Press To Start Bot";
+                CustomThrows_CheckBox.Checked = false;
+                UseHotbarScrolling_CheckBox.Checked = false;
+                Save1HP_CheckBox.Checked = false;
+                AutoEjectRod_CheckBox.Checked = false;
+                LeaveWhenFinished_CheckBox.Checked = false;
                 DummyScroll = 0;
                 RodHealth = 3;
-                checkBox6.Checked = false;
-                Button5.Visible = true;
+                Debug_CheckBox1.Checked = false;
+                PressToStartBot_Button.Visible = true;
             }
 
             //  Look for the selected Minecraft process.
-            if (checkBox8.Checked == false)
+            if (Debug_CheckBox3.Checked == false)
             {
                 //  Stop Time-Out
-                Timer7.Stop();
-                Timer7.Enabled = false;
-                Timer1.Stop();
-                Timer1.Enabled = false;
-                Timer5.Stop();
-                Timer5.Enabled = false;
-                GroupBox1.Enabled = false;
-                GroupBox2.Enabled = false;
-                GroupBox3.Enabled = false;
-                GroupBox4.Enabled = false;
-                GroupBox5.Enabled = false;
-                checkBox9.Checked = false;
-                checkBox10.Checked = false;
-                checkBox11.Checked = false;
-                Button4.Visible = false;
-                Button4.Text = "Press To Stop Bot";
-                Button5.Text = "Press To Start Bot";
-                Button5.Visible = true;
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
-                checkBox6.Checked = false;
+                RodTimeoutTimer.Stop();
+                RodTimeoutTimer.Enabled = false;
+                AudioDetectionTimer.Stop();
+                AudioDetectionTimer.Enabled = false;
+                AntiAfkTimer.Stop();
+                AntiAfkTimer.Enabled = false;
+                BotStatus_GroupBox.Enabled = false;
+                SoundVUSensitivity_GroupBox.Enabled = false;
+                FishingOptions_GroupBox.Enabled = false;
+                CustomWaitValues_GroupBox.Enabled = false;
+                ServerOptions_GroupBox.Enabled = false;
+                UnlimitedThrows_CheckBox.Checked = false;
+                AntiAFKProtection_CheckBox.Checked = false;
+                CloseBotWhenFinished_CheckBox.Checked = false;
+                PressToStopBot_Button.Visible = false;
+                PressToStopBot_Button.Text = "Press To Stop Bot";
+                PressToStartBot_Button.Text = "Press To Start Bot";
+                PressToStartBot_Button.Visible = true;
+                CustomThrows_CheckBox.Checked = false;
+                UseHotbarScrolling_CheckBox.Checked = false;
+                Save1HP_CheckBox.Checked = false;
+                AutoEjectRod_CheckBox.Checked = false;
+                LeaveWhenFinished_CheckBox.Checked = false;
+                Debug_CheckBox1.Checked = false;
                 MessageBox.Show("The selected Minecraft process was stopped!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
@@ -1111,11 +1113,11 @@ namespace MCExternalFishingBot
         /// <summary>
         /// Runs the cast/reel macro after the bot detects a fish bite.
         /// </summary>
-        private void RedirrectYes()
+        private async Task RedirrectYes()
         {
             //  Stop Time-Out
-            Timer7.Stop();
-            Timer7.Enabled = false;
+            RodTimeoutTimer.Stop();
+            RodTimeoutTimer.Enabled = false;
             TotalLines++;
             RodHealth++;
             //  Do Macro
@@ -1124,25 +1126,25 @@ namespace MCExternalFishingBot
             // Get XY
             int OldPosX = Cursor.Position.X;
             int OldPosY = Cursor.Position.Y;
-            if (checkBox12.Checked)
+            if (SwingOffset_CheckBox.Checked)
             {
                 // Move Point
-                Cursor.Position = new Point(OldPosX, OldPosY + (int)numericUpDown7.Value);
+                Cursor.Position = new Point(OldPosX, OldPosY + (int)SwingOffsetValue_NumericUpDown.Value);
 
                 //  Wait Line-In Seconds
-                Thread.Sleep(100);
+                await Task.Delay(100);
             }
 
             //  Do Not Do if No Pole In INV
             if (DummyScroll == 0)
             {
-                int Num3 = Convert.ToInt32(NumericUpDown3.Value);
-                Thread.Sleep(Num3);
+                int Num3 = Convert.ToInt32(LineInDelayValue_NumericUpDown.Value);
+                await Task.Delay(Num3);
                 //  Wait Line-In Seconds
-                Thread.Sleep(100);
+                await Task.Delay(100);
                 MainForm.mouse_event(8, 0, 0, 0, 1);
                 //  RIGHTDOWN
-                Thread.Sleep(100);
+                await Task.Delay(100);
                 MainForm.mouse_event(16, 0, 0, 0, 1);
                 //  RIGHTUP
             }
@@ -1152,35 +1154,35 @@ namespace MCExternalFishingBot
                 DummyScroll = 0;
             }
 
-            int Num4 = Convert.ToInt32(NumericUpDown4.Value);
-            Thread.Sleep(Num4);
+            int Num4 = Convert.ToInt32(LineOutDelayValue_NumericUpDown.Value);
+            await Task.Delay(Num4);
             //  Normalize Swing Offset 
-            if (checkBox12.Checked)
+            if (SwingOffset_CheckBox.Checked)
             {
-                Thread.Sleep(100);
+                await Task.Delay(100);
 
                 // Move Point
-                Cursor.Position = new Point(OldPosX, OldPosY - (int)numericUpDown7.Value);
+                Cursor.Position = new Point(OldPosX, OldPosY - (int)SwingOffsetValue_NumericUpDown.Value);
 
                 //  Wait Line-In Seconds
-                Thread.Sleep(100);
+                await Task.Delay(100);
             }
             //  Wait Line-Out Seconds
-            Thread.Sleep(100);
+            await Task.Delay(100);
             MainForm.mouse_event(8, 0, 0, 0, 1);
             //  RIGHTDOWN
-            Thread.Sleep(100);
+            await Task.Delay(100);
             MainForm.mouse_event(16, 0, 0, 0, 1);
             //  RIGHTUP
-            int Num5 = Convert.ToInt32(NumericUpDown5.Value);
-            Thread.Sleep(Num5);
+            int Num5 = Convert.ToInt32(NoiseDelayValue_NumericUpDown.Value);
+            await Task.Delay(Num5);
             //  Wait Kill-Noise Seconds
             //  Start Time-Out
-            Timer7.Enabled = true;
-            Timer7.Start();
+            RodTimeoutTimer.Enabled = true;
+            RodTimeoutTimer.Start();
             //  Re-Enable Search
-            Timer1.Enabled = true;
-            Timer1.Start();
+            AudioDetectionTimer.Enabled = true;
+            AudioDetectionTimer.Start();
         }
         #endregion
 
@@ -1195,30 +1197,29 @@ namespace MCExternalFishingBot
             // Timer1.Interval = 250;
 
             this.KeyPreview = true;
-            Tmr.Start();
             //  Tool Tips
             ToolTip toolTip1 = new ToolTip
             {
                 ShowAlways = true
             };
-            toolTip1.SetToolTip(Button4, "Stops the current bot session.");
-            toolTip1.SetToolTip(Button5, "Start the bot.");
-            toolTip1.SetToolTip(checkBox1, "Choose an custom amount of throws - Default 64.");
-            toolTip1.SetToolTip(checkBox2, "Allows to scroll to next rod when broken.");
-            toolTip1.SetToolTip(checkBox3, "Save the current rod with 1 HP remaining.");
-            toolTip1.SetToolTip(checkBox4, "Auto tosses rod. Must bind toss item as middle-mouse.");
-            toolTip1.SetToolTip(checkBox5, "Auto leaves world/server by closing minecraft.");
-            toolTip1.SetToolTip(checkBox9, "Unlimited casts of current rod. Great for creative.");
-            toolTip1.SetToolTip(checkBox11, "Close the bot when its session is over.");
-            toolTip1.SetToolTip(checkBox10, "Attempts to override AFK. Must bind shift as left-mouse.");
-            toolTip1.SetToolTip(NumericUpDown1, "Select a custom number.");
-            toolTip1.SetToolTip(NumericUpDown2, "Set a custom delay before running bot.");
-            toolTip1.SetToolTip(NumericUpDown3, "Set a custom delay before pulling in line.");
-            toolTip1.SetToolTip(NumericUpDown4, "Set a custom delay before casting new line.");
-            toolTip1.SetToolTip(NumericUpDown5, "Set a custom delay before continuing loop.");
-            toolTip1.SetToolTip(numericUpDown6, "Set the level of sound needed to trigger the bot.");
-            toolTip1.SetToolTip(checkBox12, "When catching, look down to toss. Minecraft v1.13+");
-            toolTip1.SetToolTip(numericUpDown7, "Distance to look down from toss spot.");
+            toolTip1.SetToolTip(PressToStopBot_Button, "Stops the current bot session.");
+            toolTip1.SetToolTip(PressToStartBot_Button, "Start the bot.");
+            toolTip1.SetToolTip(CustomThrows_CheckBox, "Choose an custom amount of throws - Default 64.");
+            toolTip1.SetToolTip(UseHotbarScrolling_CheckBox, "Allows to scroll to next rod when broken.");
+            toolTip1.SetToolTip(Save1HP_CheckBox, "Save the current rod with 1 HP remaining.");
+            toolTip1.SetToolTip(AutoEjectRod_CheckBox, "Auto tosses rod. Must bind toss item as middle-mouse.");
+            toolTip1.SetToolTip(LeaveWhenFinished_CheckBox, "Auto leaves world/server by closing minecraft.");
+            toolTip1.SetToolTip(UnlimitedThrows_CheckBox, "Unlimited casts of current rod. Great for creative.");
+            toolTip1.SetToolTip(CloseBotWhenFinished_CheckBox, "Close the bot when its session is over.");
+            toolTip1.SetToolTip(AntiAFKProtection_CheckBox, "Attempts to override AFK. Must bind shift as left-mouse.");
+            toolTip1.SetToolTip(CustomThrowsValue_NumericUpDown, "Select a custom number.");
+            toolTip1.SetToolTip(StartBotDelay_NumericUpDown, "Set a custom delay before running bot.");
+            toolTip1.SetToolTip(LineInDelayValue_NumericUpDown, "Set a custom delay before pulling in line.");
+            toolTip1.SetToolTip(LineOutDelayValue_NumericUpDown, "Set a custom delay before casting new line.");
+            toolTip1.SetToolTip(NoiseDelayValue_NumericUpDown, "Set a custom delay before continuing loop.");
+            toolTip1.SetToolTip(TriggerBotAtValue_NumericUpDown, "Set the level of sound needed to trigger the bot.");
+            toolTip1.SetToolTip(SwingOffset_CheckBox, "When catching, look down to toss. Minecraft v1.13+");
+            toolTip1.SetToolTip(SwingOffsetValue_NumericUpDown, "Distance to look down from toss spot.");
         }
         #endregion
 
@@ -1227,49 +1228,49 @@ namespace MCExternalFishingBot
         /// <summary>
         /// Refreshes counters, process status, version display, and live UI state.
         /// </summary>
-        [Obsolete]
-        private void Timer2_Tick(object sender, EventArgs e)
+        // [Obsolete]
+        private void StatusRefreshTimer_Tick(object sender, EventArgs e)
         {
             //  Handles For Lables
             string TL = TotalLines.ToString();
-            Label6.Text = TL;
+            TotalLinesPulledValue_Label.Text = TL;
 
             string RH = RodHealth.ToString();
-            Label14.Text = RH;
+            CurrentRodCastsValue_Label.Text = RH;
 
             string SR = ScrollReject.ToString();
             int SR1 = Int32.Parse(SR) + 1;
             string SR2 = SR1.ToString();
-            Label17.Text = SR2;
+            CurrentScrollRodValue_Label.Text = SR2;
 
             //  X, Y coords bottom toolbar
-            MyX_MyY.Text = " X:"
+            XY_TextBox.Text = " X:"
                         + Cursor.Position.X + (", Y:" + Cursor.Position.Y);
             //  Count matching Minecraft processes for the selected version.
             int count = GetMinecraftProcessCount();
 
             string JCount = count.ToString();
-            Label3.Text = JCount;
+            GameProcessesValue_Label.Text = JCount;
             //  Check for the selected Minecraft process
             if (IsMinecraftRunning())
             {
 
-                ToolStripStatusLabel1.ForeColor = Color.DarkGreen;
-                ToolStripStatusLabel1.Text = "Found";
-                checkBox8.Checked = true;
+                GameStatusValue_ToolStripStatusLabel.ForeColor = Color.DarkGreen;
+                GameStatusValue_ToolStripStatusLabel.Text = "Found";
+                Debug_CheckBox3.Checked = true;
                 if (CheckGame == 0)
                 {
-                    Button5.Enabled = true;
-                    Button5.Text = "Press To Start Bot";
+                    PressToStartBot_Button.Enabled = true;
+                    PressToStartBot_Button.Text = "Press To Start Bot";
                     CheckGame = 1;
 
                     // Minecraft found: enable client controls.
 
-                    GroupBox1.Enabled = true;
-                    GroupBox2.Enabled = true;
-                    GroupBox3.Enabled = true;
-                    GroupBox4.Enabled = true;
-                    GroupBox5.Enabled = true;
+                    BotStatus_GroupBox.Enabled = true;
+                    SoundVUSensitivity_GroupBox.Enabled = true;
+                    FishingOptions_GroupBox.Enabled = true;
+                    CustomWaitValues_GroupBox.Enabled = true;
+                    ServerOptions_GroupBox.Enabled = true;
 
                 }
 
@@ -1277,16 +1278,16 @@ namespace MCExternalFishingBot
             else
             {
 
-                ToolStripStatusLabel1.ForeColor = Color.DarkRed;
-                ToolStripStatusLabel1.Text = "Not Found";
-                Button5.Text = "Looking For Game...";
+                GameStatusValue_ToolStripStatusLabel.ForeColor = Color.DarkRed;
+                GameStatusValue_ToolStripStatusLabel.Text = "Not Found";
+                PressToStartBot_Button.Text = "Looking For Game...";
                 CheckGame = 0;
-                checkBox8.Checked = false;
-                GroupBox1.Enabled = false;
-                GroupBox2.Enabled = false;
-                GroupBox3.Enabled = false;
-                GroupBox4.Enabled = false;
-                GroupBox5.Enabled = false;
+                Debug_CheckBox3.Checked = false;
+                BotStatus_GroupBox.Enabled = false;
+                SoundVUSensitivity_GroupBox.Enabled = false;
+                FishingOptions_GroupBox.Enabled = false;
+                CustomWaitValues_GroupBox.Enabled = false;
+                ServerOptions_GroupBox.Enabled = false;
 
             }
 
@@ -1294,10 +1295,10 @@ namespace MCExternalFishingBot
             Process x = Process.GetCurrentProcess();
             string inf;
             inf = "Mem Usage: "
-                        + (x.WorkingSet / 1024) + (" K" + "\r\n" + "Paged Memory: "
-                        + (x.PagedMemorySize / 1024)
+                        + (x.WorkingSet64 / 1024) + (" K" + "\r\n" + "Paged Memory: "
+                        + (x.PagedMemorySize64 / 1024)
                         + " K");
-            Label7.Text = inf;
+            Resources_Label.Text = inf;
 
             //  Get selected Minecraft process version.
             if (TryGetFirstMinecraftProcess(out Process minecraftProcess))
@@ -1308,35 +1309,35 @@ namespace MCExternalFishingBot
                     if (System.IO.File.Exists(minecraftPath))
                     {
                         var fileVersion = FileVersionInfo.GetVersionInfo(minecraftPath);
-                        Label9.Text = fileVersion.FileVersion;
+                        ProcessVersionValue_Label.Text = fileVersion.FileVersion;
                     }
                     else
                     {
                         //  Path Does Not Exist
-                        Label9.Text = "1.0.0.0";
+                        ProcessVersionValue_Label.Text = "1.0.0.0";
                     }
                 }
                 catch
                 {
                     // Some processes may deny MainModule access depending on permissions/bitness.
-                    Label9.Text = "N/A";
+                    ProcessVersionValue_Label.Text = "N/A";
                 }
             }
             else
             {
                 //  Path Does Not Exist
-                Label9.Text = "N/A";
+                ProcessVersionValue_Label.Text = "N/A";
             }
 
             //  For Eject Rod
-            if (NumericUpDown1.Value == 64)
+            if (CustomThrowsValue_NumericUpDown.Value == 64)
             {
-                checkBox4.Enabled = false;
-                checkBox4.Checked = false;
+                AutoEjectRod_CheckBox.Enabled = false;
+                AutoEjectRod_CheckBox.Checked = false;
             }
             else
             {
-                checkBox4.Enabled = true;
+                AutoEjectRod_CheckBox.Enabled = true;
             }
 
         }
@@ -1347,54 +1348,54 @@ namespace MCExternalFishingBot
         /// <summary>
         /// Starts a bot session after the selected Minecraft version has been detected.
         /// </summary>
-        private void Button5_Click(object sender, EventArgs e)
+        private async void Button5_Click(object sender, EventArgs e)
         {
 
-            if (checkBox8.Checked)
+            if (Debug_CheckBox3.Checked)
             {
 
                 // Start Bot
 
                 //  
-                Button5.Text = "Starting Bot...";
-                GroupBox1.Enabled = false;
-                GroupBox2.Enabled = false;
-                GroupBox3.Enabled = false;
-                GroupBox4.Enabled = false;
-                GroupBox5.Enabled = false;
-                Button4.Enabled = true;
-                Button4.Visible = true;
-                Button5.Visible = false;
+                PressToStartBot_Button.Text = "Starting Bot...";
+                BotStatus_GroupBox.Enabled = false;
+                SoundVUSensitivity_GroupBox.Enabled = false;
+                FishingOptions_GroupBox.Enabled = false;
+                CustomWaitValues_GroupBox.Enabled = false;
+                ServerOptions_GroupBox.Enabled = false;
+                PressToStopBot_Button.Enabled = true;
+                PressToStopBot_Button.Visible = true;
+                PressToStartBot_Button.Visible = false;
                 RodHealth = 1;
                 ScrollReject = 0;
                 TotalLines = 0;
-                Label6.Text = "0";
-                int Num2 = Convert.ToInt32(NumericUpDown2.Value);
-                System.Threading.Thread.Sleep(Num2);
+                TotalLinesPulledValue_Label.Text = "0";
+                int Num2 = Convert.ToInt32(StartBotDelay_NumericUpDown.Value);
+                await Task.Delay(Num2);
                 //  Wait Start-Delay Seconds
                 //  Throw Line
-                System.Threading.Thread.Sleep(100);
+                await Task.Delay(100);
                 mouse_event(8, 0, 0, 0, 1);
                 //  RIGHTDOWN
-                System.Threading.Thread.Sleep(100);
+                await Task.Delay(100);
                 mouse_event(16, 0, 0, 0, 1);
                 //  RIGHTUP
-                int Num5 = Convert.ToInt32(NumericUpDown5.Value);
-                System.Threading.Thread.Sleep(Num5);
+                int Num5 = Convert.ToInt32(NoiseDelayValue_NumericUpDown.Value);
+                await Task.Delay(Num5);
                 //  Wait Noise Reduction Time
                 //  Start Anti-AFK
-                if (checkBox10.Checked == true)
+                if (AntiAFKProtection_CheckBox.Checked == true)
                 {
-                    Timer5.Enabled = true;
-                    Timer5.Start();
+                    AntiAfkTimer.Enabled = true;
+                    AntiAfkTimer.Start();
                 }
 
                 //  Start Time-Out
-                Timer7.Enabled = true;
-                Timer7.Start();
+                RodTimeoutTimer.Enabled = true;
+                RodTimeoutTimer.Start();
                 //  Start Bot
-                Timer1.Enabled = true;
-                Timer1.Start();
+                AudioDetectionTimer.Enabled = true;
+                AudioDetectionTimer.Start();
 
             }
             else
@@ -1429,17 +1430,17 @@ namespace MCExternalFishingBot
         {
 
             //  Enable/Disable NumericUpDown
-            if (checkBox1.Checked == true)
+            if (CustomThrows_CheckBox.Checked == true)
             {
-                NumericUpDown1.Enabled = true;
-                checkBox3.Enabled = false;
-                checkBox3.Checked = false;
+                CustomThrowsValue_NumericUpDown.Enabled = true;
+                Save1HP_CheckBox.Enabled = false;
+                Save1HP_CheckBox.Checked = false;
             }
             else
             {
-                checkBox3.Enabled = true;
-                NumericUpDown1.Enabled = false;
-                NumericUpDown1.Value = 64;
+                Save1HP_CheckBox.Enabled = true;
+                CustomThrowsValue_NumericUpDown.Enabled = false;
+                CustomThrowsValue_NumericUpDown.Value = 64;
             }
 
         }
@@ -1451,16 +1452,16 @@ namespace MCExternalFishingBot
         {
 
             // Enable/Disable Eject Rod
-            if (checkBox3.Checked == true)
+            if (Save1HP_CheckBox.Checked == true)
             {
-                checkBox4.Enabled = false;
-                checkBox1.Enabled = false;
-                checkBox4.Checked = false;
+                AutoEjectRod_CheckBox.Enabled = false;
+                CustomThrows_CheckBox.Enabled = false;
+                AutoEjectRod_CheckBox.Checked = false;
             }
             else
             {
-                checkBox4.Enabled = true;
-                checkBox1.Enabled = true;
+                AutoEjectRod_CheckBox.Enabled = true;
+                CustomThrows_CheckBox.Enabled = true;
             }
 
         }
@@ -1471,21 +1472,21 @@ namespace MCExternalFishingBot
         private void CheckBox4_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (checkBox1.Checked == true)
+            if (CustomThrows_CheckBox.Checked == true)
             {
 
             }
             else
             {
                 //  Enable/Disable Eject Rod
-                if (checkBox4.Checked == true)
+                if (AutoEjectRod_CheckBox.Checked == true)
                 {
-                    checkBox3.Enabled = false;
-                    checkBox3.Checked = false;
+                    Save1HP_CheckBox.Enabled = false;
+                    Save1HP_CheckBox.Checked = false;
                 }
                 else
                 {
-                    checkBox3.Enabled = true;
+                    Save1HP_CheckBox.Enabled = true;
                 }
 
             }
@@ -1502,9 +1503,9 @@ namespace MCExternalFishingBot
         {
 
             //  Send Stop State
-            Button4.Enabled = false;
-            checkBox6.Checked = true;
-            Button4.Text = "Stoping Bot...";
+            PressToStopBot_Button.Enabled = false;
+            Debug_CheckBox1.Checked = true;
+            PressToStopBot_Button.Text = "Stoping Bot...";
 
         }
 
@@ -1516,29 +1517,29 @@ namespace MCExternalFishingBot
         {
 
             //  Enable/Disable Unlimited Throws
-            if (checkBox9.Checked == true)
+            if (UnlimitedThrows_CheckBox.Checked == true)
             {
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
-                checkBox11.Checked = false;
-                checkBox1.Enabled = false;
-                checkBox2.Enabled = false;
-                checkBox3.Enabled = false;
-                checkBox4.Enabled = false;
-                checkBox5.Enabled = false;
-                checkBox11.Enabled = false;
+                CustomThrows_CheckBox.Checked = false;
+                UseHotbarScrolling_CheckBox.Checked = false;
+                Save1HP_CheckBox.Checked = false;
+                AutoEjectRod_CheckBox.Checked = false;
+                LeaveWhenFinished_CheckBox.Checked = false;
+                CloseBotWhenFinished_CheckBox.Checked = false;
+                CustomThrows_CheckBox.Enabled = false;
+                UseHotbarScrolling_CheckBox.Enabled = false;
+                Save1HP_CheckBox.Enabled = false;
+                AutoEjectRod_CheckBox.Enabled = false;
+                LeaveWhenFinished_CheckBox.Enabled = false;
+                CloseBotWhenFinished_CheckBox.Enabled = false;
             }
             else
             {
-                checkBox1.Enabled = true;
-                checkBox2.Enabled = true;
-                checkBox3.Enabled = true;
-                checkBox4.Enabled = true;
-                checkBox5.Enabled = true;
-                checkBox11.Enabled = true;
+                CustomThrows_CheckBox.Enabled = true;
+                UseHotbarScrolling_CheckBox.Enabled = true;
+                Save1HP_CheckBox.Enabled = true;
+                AutoEjectRod_CheckBox.Enabled = true;
+                LeaveWhenFinished_CheckBox.Enabled = true;
+                CloseBotWhenFinished_CheckBox.Enabled = true;
             }
 
         }
@@ -1546,14 +1547,14 @@ namespace MCExternalFishingBot
         /// <summary>
         /// Runs the optional anti-AFK click action.
         /// </summary>
-        private void Timer5_Tick(object sender, EventArgs e)
+        private async void AntiAfkTimer_Tick(object sender, EventArgs e)
         {
 
             //  Left Down
-            System.Threading.Thread.Sleep(100);
+            await Task.Delay(100);
             mouse_event(2, 0, 0, 0, 1);
             //  RIGHTDOWN
-            System.Threading.Thread.Sleep(100);
+            await Task.Delay(100);
             mouse_event(4, 0, 0, 0, 1);
             //  RIGHTUP
 
@@ -1562,15 +1563,15 @@ namespace MCExternalFishingBot
         /// <summary>
         /// Handles bot timeout/no-rod detection and resets the session if needed.
         /// </summary>
-        private void Timer7_Tick(object sender, EventArgs e)
+        private async void RodTimeoutTimer_Tick(object sender, EventArgs e)
         {
 
             //  Disable Timmer
-            Timer1.Stop();
-            Timer1.Enabled = false;
-            Timer7.Stop();
-            Timer7.Enabled = false;
-            if (checkBox2.Checked == true)
+            AudioDetectionTimer.Stop();
+            AudioDetectionTimer.Enabled = false;
+            RodTimeoutTimer.Stop();
+            RodTimeoutTimer.Enabled = false;
+            if (UseHotbarScrolling_CheckBox.Checked == true)
             {
                 //  Check If Its Already Last Throw
                 if (ScrollReject == 8)
@@ -1578,72 +1579,72 @@ namespace MCExternalFishingBot
                     //  It's GameOver End Bot
                     //  STOP BOT
                     //  Stop Time-Out
-                    Timer7.Stop();
-                    Timer7.Enabled = false;
+                    RodTimeoutTimer.Stop();
+                    RodTimeoutTimer.Enabled = false;
                     TotalLines++;
                     //  Enable
-                    if (checkBox11.Checked == true)
+                    if (CloseBotWhenFinished_CheckBox.Checked == true)
                     {
                         Close();
                     }
 
                     //  Stop Time-Out
-                    Timer7.Stop();
-                    Timer7.Enabled = false;
-                    Timer1.Stop();
-                    Timer1.Enabled = false;
-                    Timer5.Stop();
-                    Timer5.Enabled = false;
-                    GroupBox1.Enabled = false;
-                    GroupBox2.Enabled = false;
-                    GroupBox3.Enabled = false;
-                    GroupBox4.Enabled = false;
-                    GroupBox5.Enabled = false;
-                    checkBox9.Checked = false;
-                    checkBox10.Checked = false;
-                    checkBox11.Checked = false;
-                    Button4.Visible = false;
-                    Button4.Text = "Press To Stop Bot";
-                    Button5.Text = "Press To Start Bot";
-                    Button5.Visible = true;
-                    checkBox1.Checked = false;
-                    checkBox2.Checked = false;
-                    checkBox3.Checked = false;
-                    checkBox4.Checked = false;
-                    checkBox5.Checked = false;
-                    checkBox6.Checked = false;
+                    RodTimeoutTimer.Stop();
+                    RodTimeoutTimer.Enabled = false;
+                    AudioDetectionTimer.Stop();
+                    AudioDetectionTimer.Enabled = false;
+                    AntiAfkTimer.Stop();
+                    AntiAfkTimer.Enabled = false;
+                    BotStatus_GroupBox.Enabled = false;
+                    SoundVUSensitivity_GroupBox.Enabled = false;
+                    FishingOptions_GroupBox.Enabled = false;
+                    CustomWaitValues_GroupBox.Enabled = false;
+                    ServerOptions_GroupBox.Enabled = false;
+                    UnlimitedThrows_CheckBox.Checked = false;
+                    AntiAFKProtection_CheckBox.Checked = false;
+                    CloseBotWhenFinished_CheckBox.Checked = false;
+                    PressToStopBot_Button.Visible = false;
+                    PressToStopBot_Button.Text = "Press To Stop Bot";
+                    PressToStartBot_Button.Text = "Press To Start Bot";
+                    PressToStartBot_Button.Visible = true;
+                    CustomThrows_CheckBox.Checked = false;
+                    UseHotbarScrolling_CheckBox.Checked = false;
+                    Save1HP_CheckBox.Checked = false;
+                    AutoEjectRod_CheckBox.Checked = false;
+                    LeaveWhenFinished_CheckBox.Checked = false;
+                    Debug_CheckBox1.Checked = false;
                     MessageBox.Show("No Rod Was Detected! 9th Rod Finished", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     //  Still Good
                     //  Re-Enable Search
-                    Timer1.Enabled = false;
-                    Timer1.Start();
+                    AudioDetectionTimer.Enabled = false;
+                    AudioDetectionTimer.Start();
                     //  Scroll Hotbar
                     MouseScroll(false, 1);
                     // scrolls Down 10 wheel clicks
                     //  Cast Rod
-                    int Num4 = Convert.ToInt32(NumericUpDown4.Value);
-                    System.Threading.Thread.Sleep(Num4);
+                    int Num4 = Convert.ToInt32(LineOutDelayValue_NumericUpDown.Value);
+                    await Task.Delay(Num4);
                     //  Wait Line-Out Seconds
-                    System.Threading.Thread.Sleep(100);
+                    await Task.Delay(100);
                     mouse_event(8, 0, 0, 0, 1);
                     //  RIGHTDOWN
-                    System.Threading.Thread.Sleep(100);
+                    await Task.Delay(100);
                     mouse_event(16, 0, 0, 0, 1);
                     //  RIGHTUP
-                    int Num5 = Convert.ToInt32(NumericUpDown5.Value);
-                    System.Threading.Thread.Sleep(Num5);
+                    int Num5 = Convert.ToInt32(NoiseDelayValue_NumericUpDown.Value);
+                    await Task.Delay(Num5);
                     //  Wait Kill-Noise Seconds
                     RodHealth = 0;
                     ScrollReject++;
                     //  Start Time-Out
-                    Timer7.Enabled = true;
-                    Timer7.Start();
+                    RodTimeoutTimer.Enabled = true;
+                    RodTimeoutTimer.Start();
                     //  Re-Enable Search
-                    Timer1.Enabled = true;
-                    Timer1.Start();
+                    AudioDetectionTimer.Enabled = true;
+                    AudioDetectionTimer.Start();
                 }
 
             }
@@ -1652,30 +1653,30 @@ namespace MCExternalFishingBot
                 //  Scroll Is Disabled
                 //  STOP BOT
                 //  Stop Time-Out
-                Timer7.Stop();
-                Timer7.Enabled = false;
-                Timer1.Stop();
-                Timer1.Enabled = false;
-                Timer5.Stop();
-                Timer5.Enabled = false;
-                GroupBox1.Enabled = false;
-                GroupBox2.Enabled = false;
-                GroupBox3.Enabled = false;
-                GroupBox4.Enabled = false;
-                GroupBox5.Enabled = false;
-                checkBox9.Checked = false;
-                checkBox10.Checked = false;
-                checkBox11.Checked = false;
-                Button4.Visible = false;
-                Button4.Text = "Press To Stop Bot";
-                Button5.Text = "Press To Start Bot";
-                Button5.Visible = true;
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-                checkBox4.Checked = false;
-                checkBox5.Checked = false;
-                checkBox6.Checked = false;
+                RodTimeoutTimer.Stop();
+                RodTimeoutTimer.Enabled = false;
+                AudioDetectionTimer.Stop();
+                AudioDetectionTimer.Enabled = false;
+                AntiAfkTimer.Stop();
+                AntiAfkTimer.Enabled = false;
+                BotStatus_GroupBox.Enabled = false;
+                SoundVUSensitivity_GroupBox.Enabled = false;
+                FishingOptions_GroupBox.Enabled = false;
+                CustomWaitValues_GroupBox.Enabled = false;
+                ServerOptions_GroupBox.Enabled = false;
+                UnlimitedThrows_CheckBox.Checked = false;
+                AntiAFKProtection_CheckBox.Checked = false;
+                CloseBotWhenFinished_CheckBox.Checked = false;
+                PressToStopBot_Button.Visible = false;
+                PressToStopBot_Button.Text = "Press To Stop Bot";
+                PressToStartBot_Button.Text = "Press To Start Bot";
+                PressToStartBot_Button.Visible = true;
+                CustomThrows_CheckBox.Checked = false;
+                UseHotbarScrolling_CheckBox.Checked = false;
+                Save1HP_CheckBox.Checked = false;
+                AutoEjectRod_CheckBox.Checked = false;
+                LeaveWhenFinished_CheckBox.Checked = false;
+                Debug_CheckBox1.Checked = false;
                 MessageBox.Show("No Rod Was Detected!", "Minecraft Auto-Fishing Bot v" + VersionNumber, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -1694,13 +1695,13 @@ namespace MCExternalFishingBot
             if (IsMinecraftRunning())
             {
 
-                toolStripStatusLabel6.Text = "- [Working]";
+                Capture_ToolStripStatusLabel.Text = "- [Working]";
 
                 // Disable Timer
-                timer9.Enabled = true;
+                VuCaptureTimeoutTimer.Enabled = true;
 
                 // Action Timer
-                timer10.Enabled = true;
+                VuLevelCaptureTimer.Enabled = true;
 
             }
             else
@@ -1716,20 +1717,20 @@ namespace MCExternalFishingBot
         /// <summary>
         /// Stops the temporary VU-level capture timers.
         /// </summary>
-        private void Timer9_Tick(object sender, EventArgs e)
+        private void VuCaptureTimeoutTimer_Tick(object sender, EventArgs e)
         {
 
-            timer9.Enabled = false;
-            timer10.Enabled = false;
-            toolStripStatusLabel6.Text = "N/A";
-            toolStripStatusLabel6.Text = "- [Capture]";
+            VuCaptureTimeoutTimer.Enabled = false;
+            VuLevelCaptureTimer.Enabled = false;
+            Capture_ToolStripStatusLabel.Text = "N/A";
+            Capture_ToolStripStatusLabel.Text = "- [Capture]";
 
         }
 
         /// <summary>
         /// Displays the current VU level for the selected Minecraft audio session.
         /// </summary>
-        private void Timer10_Tick(object sender, EventArgs e)
+        private void VuLevelCaptureTimer_Tick(object sender, EventArgs e)
         {
             //  Check for the selected Minecraft process
             if (IsMinecraftRunning())
@@ -1749,12 +1750,12 @@ namespace MCExternalFishingBot
                         var Label100String = string.Join(" ", values.Select(v => v.ToString("00%")));
                         string firstTwoChars = Label100String.Length <= 2 ? Label100String : Label100String.Substring(0, 2);
 
-                        string VPInput = numericUpDown6.Text;
+                        string VPInput = TriggerBotAtValue_NumericUpDown.Text;
                         string s1 = firstTwoChars;
                         int s1int = Int32.Parse(s1);
                         int s2int = Int32.Parse(VPInput);
 
-                        toolStripStatusLabel5.Text = s1;
+                        VULevelValue_ToolStripStatusLabel.Text = s1;
 
                     }
 
@@ -1779,13 +1780,13 @@ namespace MCExternalFishingBot
         /// </summary>
         private void CheckBox12_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox12.Checked)
+            if (SwingOffset_CheckBox.Checked)
             {
-                numericUpDown7.Enabled = true;
+                SwingOffsetValue_NumericUpDown.Enabled = true;
             }
             else
             {
-                numericUpDown7.Enabled = false;
+                SwingOffsetValue_NumericUpDown.Enabled = false;
             }
         }
         #endregion
